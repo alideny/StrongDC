@@ -1,0 +1,2545 @@
+** $Rev$
+	DC++ merge (miniupnpc update)
+	added missing precompiler flag for NATUPnP
+
+** svn552
+	added automatic incoming connection type detection (DC++, now without logging and translations, because we don't want GUI changes)
+	webserver encoding changed to utf-8
+	webserver session timeout changed to 10 minutes
+	support ADC search by file type group (no custom groups with this GUI)
+	fixed search spam from previous revision (THX eMTee)
+
+** svn551
+	some DC++ BZR merge
+	added support to set favorite hub encoding (last change into WTL GUI, so without translations now)
+	DC++ emulation is off by default (for non-favorite hubs)
+	updated OpenSSL, ZLIB, BZip2
+
+** svn548
+	some DC++ BZR merge
+	updated boost library
+
+** svn536
+	enabled multiCPU compilation
+	fixed memory leak in DHT code
+	using C++0x specifics (don't use STLPort now)
+	removed 0.698-imposed empty token workaround (DC++ BZR)
+
+** svn501
+	new partial sources aren't added to finished files
+	updated OpenSSL
+
+** svn500
+	added "Microsoft Jet 4.0" to libraries that could cause crash
+	finally fixed crashes on TTH inconsistencies
+	some refactoring
+	fixed PostMessage limitation in paused search state (see MSDN)
+	faster O(logN) searching in country codes when displaying country flags
+	DC++ BZR merge (procotol error, NAT-T searching, miniupnp)
+	fixed relocker warning in boost's code
+
+** svn499
+	fixed LP bug #556853
+	removed obsolete client/filelist checked color settings
+	fixed "Offline" translation in some cases
+	fixed DHT bootstrap
+	fixed DHT file publishing
+	some DC++ BZR merge
+
+** svn497
+	fixed possible crashes on exception at the end of segment
+	user command's help opens DC++ webhelp
+	updated zlib to 1.2.4
+	migrated to MSVS2010
+	added option to disable Explorer theming in listviews and treeviews
+	added temporary workaround for possible DHT search spam
+	first try to fix throttling with very large speeds
+	updated boost to 1.43
+
+** svn496
+	released 2.41
+
+** svn495
+	updated changelog
+	updated Czech language
+
+** svn494
+	updated installer script
+
+** svn493
+	tabs can be placed on right and left side too
+	fixed crashes on TTH inconsistency
+	fix to transferview
+
+** svn492
+	TS field in client profiles is ignored
+	improved PK version detection
+	ignored users are saved on exit
+	fixed crash on user check
+	small DC++ BZR merge (usercommands stuff)
+
+** svn491
+	slow chunks overlapping is applied on very slow sources too
+	fixed potentional race condition in slow chunks overlapping
+	DC++ BZR merge
+	update client type when filelist check fails
+
+** svn490
+	fixed that SVN revision number was autoupdated in x64 release only
+	some DC++ BZR merge
+	fixed country flags crash under Win2000
+	added country flags into userlist
+	fixed U4
+
+** svn489
+	hopefully autoupdating SVN revision numbers
+	[ADC] fixed compatibility with older clients in passive mode
+	hopefully fixed some crashes
+	fixed deadlock in DHT FW check vs ClientManager
+	adding OPs to ignore list is allowed
+	correctly displaying finished status in queue frame
+
+** svn488
+	released 2.40
+
+** svn487
+	updated default hublists
+
+** svn486
+	adopt explorer theme on WinXP too
+	fixed 2 warnings (HubFrame+BufferedSocket)
+
+** svn485
+	fixed alternate limiting
+	setting default theme set correct default theme
+	added code to set favgroup color but it doesn't work (Windows don't support it)
+
+** svn484
+	some limiter fixes
+	added CID column to userlist
+	fixed execution on Win2000
+	fixed usercommands name settings
+	max xml nesting set to 32
+
+** svn483
+	delay load of uxtheme.dll
+	don't redirect everything to DHT
+	some DC++ BZR merge
+	removed NetLimiter v1 speed limit check
+	updated GeoIP db
+	hopefully fixed migration from local mode
+
+** svn482
+	removed TestSUR check, because it is unuseful nowadays
+	reorganised user report text
+	NMDC tag's L-part displayed in Connection column
+	fake detector functions moved from ClientManager to its own header
+	updated copyright years
+
+** svn481
+	better user commands (DC++ BZR)
+	move fav hubs across groups with move up / move down (DC++ BZR)
+	hopefully fixed jumping to the top when moving favhubs
+
+** svn480
+	accepting search results from users with NAT-T support in passive mode
+	[DHT] fixed problems when user was online in any hub but not in DHT (crashes ...)
+	[DHT] search results requests are now encrypted when key is known
+	fixed non-working multimedia keys (THX adrian_007)
+
+** svn479
+	fixed freezing with certain queues
+	[DHT] display slots count for search results
+	[DHT] default search results's file name is set to TTH
+	DC++ BZR merge
+	[DHT] fixed node disconnecting (it should fix last seen in favusers)
+	made user commands box multiline to allow line endings (ctrl+enter) for ADC cmds
+
+** svn478
+	[DHT] nodes count in response is based on search type (it should save some bandwidth)
+	[DHT] sending more pings at once to allow faster detection of dead nodes and verification
+	returned REUSE_ADDR into ConnectionManager to avoid used ports after crash
+	[DHT] rewritten procedure to add nodes into routing table
+	[DHT] fixed UDP key
+	don't disconnect when NAT traversal attempt fails (needs to be tested)
+
+** svn477
+	returned back OpenSSL' locking callback which was disabled by mistake
+	updated OpenSSL
+	added option to enable/disable NAT traversal
+	added double buffering to all listviews
+
+** svn476
+	language file name now accepts path relative to strongdc.exe directory
+	fixed some crashes with partial file sharing
+	initial work on NAT traversal => passive-passive connections (cologic, BCDC++)
+	first try on better SSL error messages
+	added DHT info into main window's statusbar
+	fixed loading hubhint from queue.xml
+	favgroups fixes
+	added option to keep finished files in queue (DC++ BZR)
+
+** svn475
+	I hate Visual Studio which changes path names by itself!!!!
+
+** svn474
+	some theming stuff -  must be tested if it works on XP
+	[ADC] allow hubs to set IP for passive users (DC++ BZR)
+
+** svn473
+	chat optimizations (THX Crise)
+	fixed building/running without STLPort
+	[DHT] fixed RCM command incorrectly detected as spam
+	[DHT] do handshake when connection is initiated from "offline" node
+	critical sections replaced with boost's mutex/spinlock
+	favorite hubs grouping
+
+** svn472
+	fixed building
+
+** svn471
+	added favorite hub groups settings (adrian_007)
+	limiter's PulseEvent replaced with boost's conditional variables
+	small fix in hubhints
+	ThrottleManager divided into .h/.cpp files
+	updated Boost library to 1.41
+
+** svn470
+	begun work on favorite hub groups
+	some other DC++ BZR merge
+
+** svn469
+	some UPnP stuff (DC++ BZR)
+	changed default hublists + some hublists stuff (THX eMTee)
+	fixed trailing spaces in translations
+	updated OpenSSL
+
+** svn468
+	DC++ BZR merge (known bug: trailing spaces are not loaded from language files)
+	added hub address into queue context menu
+	fixed memory leak in DHT
+	added configuration type into main window title
+	updated OpenSSL
+
+** svn467
+	added check for filelist size, 256 MB is allowed maximum (THX eMTee)
+	[DHT] duplicite IPs depends on IP:port
+	bloom fixes (DC++ BZR)
+
+** svn466
+	hubhints (DC++ BZR; needs cleaning up)
+
+** svn465
+	[ADC] fixed IP settings
+	partial fix for OnlineUser/Identity crash
+
+** svn464
+	[DHT] optimized adding new nodes to routing table
+	cleanup of old limiter code
+	fixed crash with GnuTLS
+	OpenSSL is used as default library until someone is able to build GnuTLS under VC++
+	fixed library freeing in PopupManager
+	[DHT] UDP port can be changed also in Direct connection mode
+	[DHT] don't allow connections with offline users (i.e. without previous handshake)
+
+** svn463
+	[DHT] better pinging old nodes
+	[DHT] file publishing takes 20 secs only
+	[DHT] default UDP port is 6250
+	[DHT] improved UDP sending speed
+	added some missing country flags (THX RadoX)
+	hopefully fixed UTF-8 in magnet links (FlyLinkDC++)
+	added possibility to compile with GnuTLS
+	fixed getting text width (for statusbars texts)
+	added secure status to hubname + cipher into statusbar (DC++)
+
+** svn462
+	[DHT] publishing all sharelist (files > 1 MiB) and not only 200 largest files
+	[DHT] fixed encryption when our IP changes
+	[DHT] file publishing takes 40 secs instead of 140 secs
+	[DHT] encrypted packet has random first byte, so it's impossible to detect packet type
+
+** svn461
+	updated to Boost 1.40
+	[DHT] fixed parsing encrypted packets
+	removed string pool to see whether it fixes crashes
+
+** svn460
+	fixed small bug in limiter's settings
+	fixed some problems on x64 platforms
+	[DHT] fixed switching on/off
+	[DHT] faster UDP sending
+	[DHT] faster detection of dead nodes
+	[DHT] fixed publishing partial files
+	[DHT] ignore multiple nodes with same IP:port
+	[ADC] added TS support (DC++ BZR)
+	[DHT] advertising this feature to hubs
+	[DHT] implemented simple IP verification
+	[DHT] don't allow multiple same IPs in search response
+	fixed bold text of shared folders when any subfolder doesn't exist
+	[DHT] implemented general flooding protection
+	[DHT] implemented simple encryption
+
+** svn459
+	released 2.30
+
+** svn458
+	default uploadbar color is more orange than red
+
+** svn457
+	fixed bold text of shared folders in Settings
+	merged with DC++ hashing pause code
+	fixed parsing ADC commands in DHT
+
+** svn456
+	implemented %[userXX] and %[idleTI] variables into away messages
+	hopefully fixed memory leak in ShareManager
+	hopefully fixed switching DHT on/off
+	fixed exit when hashing is paused
+	updated OpenSSL
+
+** svn455
+	download partial filelist for automatch only when filepath is known
+	fixed deadlock in DHT code
+	hopefully fixed hashing pause
+
+** svn454
+	refactored bandwidth limiter
+
+** svn453
+	rewritten download limiter
+	fixed transfer status for filelists
+	added critical section to StringPool
+	upload queue fix
+	added LocalMode option to dcppboot.xml
+	some cleanup in HubFrame's status messages
+
+** svn452
+	improved bootstrap routine
+	added option to open recent hubs frame on startup
+	rewritten upload limiter, it shouldn't suffer from 50+1=100 problem (need many tests)
+
+** svn451
+	fixed random crashes in Release build
+	small tweak for firewalled nodes
+	option to autoupdate IP on DHT firewall check
+	all DHT settings should work
+	default DHT port set to 6245
+	tried adding string pool for storing userinfo
+	updated OpenSSL
+
+** svn450
+	stop hashing folders excluded from share
+	getting search results from DHT online users only (fixes crashes and non-downloadable files)
+	ADC connection speed is displayed in bytes/sec (not in bits)
+	updated OpenSSL to 1.0 beta2
+
+** svn449
+	added support for DHT passive connections
+
+** svn448
+	when dht.xml is older than 7 days, bootstrap from database
+	fixed deadlock
+	DHT publishing is delayed until bootstrapping is completed
+	don't spread firewalled DHT sources, not reliable but good enough
+	publish one file in 2 seconds
+	DHT uses UDP port 6241
+
+** svn447
+	bandwidth limiter fixes (DC++ BZR)
+	hopefully fixed DHT file publishing
+	fixed publishing partial files
+
+** svn446
+	fixed crash when no nodes available
+	possible fix for STA commands
+	changed STA commands to match ADC protocol
+
+** svn445
+	small fix to avoid IP spoofing via INF
+	updated bandwidth limiter code (BCDC++ BZR)
+	better STA handling in DHT
+
+** svn444
+	improved DHT firewall check
+	fixed memory leak
+	changed INF format for ping
+	added sources limit to search results
+	added node count check in search results
+	decreased republish time to 5 hours
+
+** svn443
+	make option to set DHT/UDP port (still cannot be changed)
+	added IP:port check for DHT packets
+	partial file sharing in DHT
+	UDP buffer size respects settings
+	DHT uses UDP port 6240
+
+** svn442
+	rewritten nodes expiration
+	decreased DHT search lifetimes
+	increased UDP receive buffer size
+	prepared for partial file sharing in DHT
+	forbidden duplicate DHT searches
+
+** svn441
+	change in routing table
+	returning more nodes in search response
+
+** svn440
+	better dead nodes detection
+	fixed broken DHT connections
+	fixed DHT connected status on startup
+	save DHT status every minute
+	improved bootstrapping
+	DHT uses UDP port 6239
+
+** svn439
+	working published files expiration
+	fixed crashes when getting DHT hub info
+	when searching for file in DHT, check own store first
+	DHT uses UDP port 6238
+
+** svn438
+	published sources expiration set to 24 hours
+	DHT active connections should work
+	only active nodes are saved to database
+	DHT uses UDP port 6237
+	fixed parsing file sources
+ 	manual searching in DHT	
+
+** svn437
+	fixed TTH of published files
+	fixed publish response
+	published files are saved on exit
+	DHT searching works
+	begun work on DHT connections
+
+** svn436
+	partial implementation of DHT search engine
+
+** svn435
+	changed hashing pause to DC++ code
+	hub hint used on more places
+	hopefully fixed extra slot issues
+	upload queue position and TLS connections are enabled in spite of stealth mode
+
+** svn434
+	fixed upload connection tokens (grant extra slot, upload queue etc.)
+	added cheating string for old clients
+	get full list when partial one is not available
+	fix round-off issue when segmented downloads are disabled (DC++ BZR)
+	fix crash on too many connections (DC++ BZR)
+	fixed slots info in ADC hubs
+	automanage sharemanager memory (DC++ BZR)
+	fixed info update on limiter change from toolbar
+	improved manual searching for something planned for autosearch
+	using OpenSSL with disabled TLS extension
+
+** svn433
+	released 2.22
+
+** svn432
+	fixed hubhints
+	fixed Highest priority extra download slots
+	updated OpenSSL
+
+** svn431
+	try to have maximum priority for testsur
+	filelist is checked only if user hasn't been banned for testsur
+	crash fix from DC++ BZR
+
+** svn430
+	fixed saving queue when adding file without any source
+	hopefully fixed protocol handlers registering on WinVista (admin rights not needed anymore)
+	removed support of external magnet handler (magnet.exe etc.)
+	fixed right click menu in upload queue frame
+	hopefully fixed invalid trailing character when copying whole chat line
+	fixed wrong cursor in chat popup menu
+
+** svn429
+	added "clear chat" to hub's tab context menu
+	fixed webserver log settings
+	ref stuff from DC++ BZR
+	added possibility to recheck unfinished downloads (DC++ BZR)
+
+** svn428
+	fixed missing CID in transfers' log
+	fixed segment size when segmented downloads are disabled
+	added more info to spam log message
+	fixed "clear chat" item in PM's tab context menu
+
+** svn427
+	adcs:// links are clickable now
+	fixed apostrophes in chat links
+	begun work on hub-dependent connections and PMs (DC++ BZR)
+	ADC partial search results contain hub's IP:port
+	added complete Boost library
+
+** svn426
+	finished partial slots settings
+
+** svn425
+	reverted NmdcHub performance stuff due to stability problems
+	fixed invalid state icon in TreeListViewCtrl when using filtering
+	fixed possible file corruption on crash
+	fixed PM crash
+
+** svn424
+	[#298137] fixed displaying hub name in ADC userlist
+	improved partial file sharing chunk size
+
+** svn423
+	added TLS support for NMDC hub connections (nmdcs://)
+	changed to stable version of OpenSSL
+	reverted to old stable code of PrivateFrame (but still not much stable)
+
+** svn422
+	temp target file is checked for its existence before download resumes
+	updated OpenSSL
+
+** svn421
+	transfer's file name is now more understandable for filelists/testsur
+	using VS2008 SP1
+	kademlia postponed to the next bigger version (because it needs many changes to work completely)
+	unsuccessful partial filelist requests are removed from queue
+
+** svn420
+	queue automatch downloads partial filelists only and is defaulty on (match efficient now!)
+	temporary fix for connection types
+	fixed deadlock
+
+** svn419
+	boostrapping from bootstrap nodes
+	saving only 200 good nodes at exit
+	don't bold queue tab when filelist/testsur is finished
+	alternate sources are added to queue even if autosearch is disabled
+	kademlia uses port 5172
+
+** svn418
+	fixed kademlia file publishing
+	ignoring duplicite kademlia searches
+	fixed copying folders info in filelists
+
+** svn417
+	duplicite publish requests are ignored
+	no coralize for kademlia bootstrap URL
+	added kademlia reponse to successful publish request
+	republishing every 24 hours
+
+** svn416
+	improved kademlia search tolerance
+	kademlia autosearches for TTH
+	added hotkeys for open download folder (Ctrl+Z) and open own filelist (Ctrl+O)
+	kademlia uses UDP port 5171
+
+** svn415
+	IP isn't advertised via kademlia anymore
+	kademlia file transfers
+	fixed kademlia IP parsing
+
+** svn414
+	kademlia bootstraps from external website
+	finished kademlia files publishing
+	added some kademlia IP checks
+	added sending and parsing INF command
+	added "McAfee VirusScan Winsock Helper" to libraries causing a crash
+	open link calls only ShellExecute without getting real protocol handler
+	added possibility to compile with yaSSL instead of OpenSSL (but it's not recommended)
+	hopefully fixed possible invalid hub user count
+	search history is sorted and doesn't show duplicites
+	kademlia UDP compression level respects settings
+	kademlia uses UDP port 5170
+	TCP port isn't advertised via kademlia anymore
+	begun work on extra slots for partial share
+
+** svn413
+	some memory optimization
+	added support for secured HTTP connections
+	nodelist is saved as XML file
+	rewritten a lot of parts of decentralized network (it doesn't match the draft now :-D)
+	decentralized network renamed to Kademlia, because it is very similar to it
+	finally removed all GetZBlock advertising
+	changed binary prefixes to match standard IEC 60027-2
+
+** svn412
+	changed default URL to client profiles
+	fixed graphics on 16-bit color depth
+	tab key switching works in PM
+	some DC++ BZR merge
+	fixed too many "Requesting" messages
+	ctrl+m userlist's shortcut to send PM
+	fixed losing focus in settings' tree
+	fixes for URL parsing in chat
+	advertising NMDC TLS support
+	removed mess which stayed there from czdc bugs
+	continued work on decentralized network
+
+** svn411
+	used magnet icon from ApexDC++
+	fast speed optimization for regex library
+	better URL detection, slower but more precise (please all report nonworking URLs)
+	segmented downloads option made as a checkbox
+	maximum hashing speed settings moved to share settings
+	fixed crash #15604
+	removed detection of too many same numbers in share size
+	PM frame is hub-dependent
+	begun work on decentralized StrongDC++ network
+	some DC++ BZR merge
+
+** svn410
+	released 2.21
+
+** svn409
+	fixed fix for transferview :-)
+
+** svn408
+	CDM fix (adrian_007)
+	forgot to commit transferview patch
+
+** svn407
+	used __cdecl for Release
+	fixed blinking single download items
+	updated OpenSSL
+
+** svn406
+	completely fixed passive flag
+	hopefully fixed getting nicks in reconnected PMs
+	fixed download chunked flag
+	revert old code for loading obsolete .antifrag files
+	CTM spam control in ADC hubs
+
+** svn405
+	webserver respects search interval
+	fixed searching through webserver
+	another changes about OnlineUser
+	playing with anti-flood constants
+
+** svn404
+	other changes to SSLSocket (DC++ BZR)
+	try to fix crashes around OnlineUser/Identity
+	included x86 OpenSSL debug libraries
+	removed x64 OpenSSL libraries - x86 libs will be removed too and users will have to compile it on their own
+	CDM fix (adrian_007)
+	removed obsolete garbage commands
+	fixed SSL threading issues
+	
+** svn403
+	fixed crash #15455
+	fixed crashes in QueueManager::findPFSSources
+	disable boost asserts in release build
+	strings in Certificate settings are translatable
+	"Send unknown commands" settings applies to PM too
+	added Cipher column to transfer window
+	removed SSLSocket's virtual table
+	nonfiltered kick messages are coloured as server messages
+	added transfer message when asking for a slot
+	64-bit build results in StrongDC64.exe/pdb
+	some changes around SSL_connect and SSL_accept - needs more fixes to work correctly (DC++ BZR)
+	fixed passive flag in ADC hubs (passive flag must be fixed for me in NMDC hubs)
+
+** svn402
+	released 2.2
+
+** svn401
+	fixed searching interval
+
+** svn400
+	added missing files
+
+** svn399
+	implemented new CDM system (THX adrian_007)
+	support for passive PSR in ADC hubs
+	removed internal string comparison functions
+	added temporary fix to avoid spamming ports 80 and 2501
+
+** svn398
+	fixed search tokens in ADC hubs
+	cleanup NMDC status flags code
+	added support for encrypted NMDC transfers
+	SSL error code 6 translated to understandable message
+	transfer main item displays all available flags
+	fixed 64-bit builds
+
+** svn397
+	added support for partial file sharing in ADC hubs
+	all UDP commands moved to queue thread
+	PCRE changed to boost's regex
+
+** svn396
+	manual searches have priority before automatic
+	fixed partial file sharing
+	fixed possible race condition with new search queue timer
+	fixed crash when MDI window is activated before creating
+	fixed cheat messages in ADC hubs
+
+** svn395
+	upload slots settings has its own page
+	search progressbar uses opera-style
+	ADL searching is done via regexp
+	added option to set maximum auto-opened slots (old Kulmegil's patch)
+	fixed memory leak in network settings (ApexDC++)
+	implemented some tweaks to hash progress dialog (old Kulmegil's patch)
+
+** svn394
+	fixed line ends in PM history
+	quick search position saved
+	fixed that 3 standard OP commands were missing in some cases
+	menu/toolbar/quicksearch position and size are saved
+	updated PCRE library
+	stopping old search request when starting new one
+	rewritten search queue + search interval is hub dependent (idea from RevConnect)
+	added missing searchresult's context menu header
+
+** svn393
+	prevent Aboutdlg crash in case of wrong versiondata (DC++ BZR)
+	add 1000 mbit upload speed (DC++ BZR)
+	some fixes for resuming old .antifrag files (DC++ BZR)
+	decreased OpenSSL libraries size
+	fixed finished items' total size
+	added option to place usercommands outside of submenu
+
+** svn392
+	possible x64 builds (with many warnings now)
+	updated OpenSSL
+	changed compiler output directory
+
+** svn391
+	some other fixes to chat formatting
+	fixed potentional race condition in QueueManager
+	implemented Quick Search function (ApexDC++)
+
+** svn390
+	fixed usercommands in PM tab context menu
+	updated bzip2
+	fixed some problems with returning search results (DC++ BZR)
+	some fixes to chat formatting
+
+** svn389
+	added "Troj/Agent-GZF" to crash libraries
+	added "Internet Monitor Layered Service provider" to crash libraries
+	fixed that Windows subfolders were shared
+	fixed problems with disabled segmented downloads
+	fixed remote exploit (THX Fartman)
+	whole folder can be downloaded without downloading whole filelist
+	added "Browse filelist" to userlist/transferlist default actions
+	updated boost library
+
+** svn388
+	released 2.13
+
+** svn387
+	fixed saving usernicks in queue
+	fixed missing "Downloaded parts" status in queue
+	Windows folder won't be shared
+
+** svn386
+	some DC++ SVN merge
+	fixed ADC userlist refresh
+	enabled guided optimization (up 20% faster when released)
+
+** svn385
+	fixed opening user logs from chat
+	fixed parsing partial blocks in PSR command
+	fixed race condition in ConnectionManager
+	improved segment auto-size (DC++ SVN)
+	improved transfer speed averaging (DC++ SVN)
+	allow shared virtual folders to have the same name (DC++ SVN)
+
+** svn384
+	fixed some memory problems
+	fixed columns ordering when some columns are hidden
+
+** svn383
+	fixed Release build
+
+** svn382
+	hopefully fixed columns settings
+	fixed crashes #12115, #12130, #12141
+	fixed search results count
+	fixed loading old-styled hublists
+	some memory handling fixes (idea from DC++ SVN)
+	fixed crash when try to run user command on offline user in mainchat
+	hopefully fixed frozen running transfer when no other partial chunk available
+	something about upload speed (not final and still broken)
+
+** svn381
+	released 2.12
+
+** svn380
+	fixed "Download finished" reporting for single download items
+
+** svn379
+	changed version.xml/hublists URLs to Coral
+	added "Troj/Agent-GNA" to crash libraries
+	slow downloads disconnecting fix
+	some clean up
+
+** svn378
+	DownloadManager patch from DC++ SVN
+
+** svn377
+	reworked column order/width code a bit (it will break current settings)
+	some stuff about /me messages (DC++ SVN)
+
+** svn376
+	chat autoscroll code cleaned up a bit
+	socks5 port field accepts only numbers
+	fix for delayed upload finish
+
+** svn375
+	fixed extensions list in Queue "Rename/Move" dialog
+	hopefully fixed all problems with chat autoscroll
+	Win9x chat fix
+
+** svn374
+	workaround for QueueFrame updating on file move/rename
+	fixed possible deadlock between ConnectionManager and DownloadManager
+	PFS fix
+
+** svn373
+	updated client profiles URL
+	using dcpp namespace
+	tweaked PFS
+	display "All download slots taken" when maximum segments reached
+	removed horizontal chat/userlist layout to allow compiling with default WTL
+	updated WTL
+
+** svn372
+	removed option to disable real upload queue
+	removed bad software detection (it is unuseful now)
+	added option to enable/disable slow chunks overlapping
+	some stuff about /me message (DC++ SVN)
+	applied arne's MerkleTree crash fix
+	Identity crash fix proposed by arne
+	always scroll chat to bottom when posting own message
+
+** svn371
+	hopefully fixed autoscrolling when nick/ip/url is selected with rightclick
+	redesigned menu code - it allows copying according to userlist columns
+
+** svn370
+	scroll to bottom when cutting down the chat buffer
+	fixed ignore/unignore in chat
+	fixed losing item focus when closing favorite hub properties
+	fixed user commands in chat
+
+** svn369
+	chat menu code rewritten... now must find what doesn't work :)
+
+** svn368
+	changed the way of chat autoscrolling
+	begun work on main/PM chat menu reworking (chat menus don't work at this time)
+
+** svn367
+	removed special extension from antifrag files
+	added last TTH check to debug build
+
+** svn366
+	try to fix a crash in Identity
+	fixed converting 64bit integer to unicode string
+	fixed crash #10605
+	fixed overlapping when faster segment is disconnected (no slots etc.)
+	hopefully fixed crash #10690, #10772, #10795, #10796, #10828, #10856
+
+** svn365
+	fixed some comments
+	fixed svn version number
+
+** svn364
+	continuing work on slow segments overlapping (it needs many testing now)
+	returned usernicks to Finished downloads frame
+	[NMDC] usernicks CPU optimization
+	fixed last segment status in TransferView
+
+** svn363
+	hopefully fixed TypedTreeListView children counting
+	hopefully fixed upload timeleft
+	added multiple items info copying in filelists (THX klirik)
+	begun work on slow segments overlapping
+
+** svn362
+	fixed crashes #10562, #10585, #10559
+	experimental: use boost intrusive_ptr (DC++ SVN)
+
+** svn361
+	released 2.11
+
+** svn360
+	fixed small problem with queue priority
+
+** svn359
+	added user menu items to nick's context menu in PM
+	workaround for preview antifrag files
+	changes in Version update routine
+
+** svn358
+	fixed some problems with emoticons
+	autopriority enabled only when other priority not selected
+	fixed some problem with search results
+	bloom filters changed (DC++ SVN)
+
+** svn357
+	fixed crashes when adding files through magnet links
+	fixed unavailable filelist reporting (THX redsaq)
+	workaround for some lagging routers (THX klirik)
+
+** svn356
+	improved PFS a bit (to the state before removing FileChunksInfo)
+	reverted only unique TTHs in queue (there was some reason to removed it, but I can't remember it)
+	some fixes for adding files to queue
+
+** svn355
+	fixed crashes #9252, #9358, #9620, #9622
+	try to fix crashes #9257, #9315, #9451
+	fixed a bug when minislots were aplied to chunk size and not file size
+	fixed file size in Upload queue window
+	fixed DNS resolving for favorite hub's IP
+	reverted storing user's first nick to have it for offline users
+	fixed storing partially downloaded chunks
+	fixed slow downloads disconnecting
+	fixed antifragment downloading
+	"Download finished" popup is displayed only when whole file is complete
+	Socks5 password field isn't readable
+	hopefully fixed some problems with downloading from filelists
+	switched to VS 2008
+	updated bzip2
+	fixed an issue with nick encodings and nmdc connections (DC++ SVN)
+	fixed autopriority for new files
+	added "Naomi web filter" to crash libraries
+	double-sized chunks for really fast users
+
+** svn354
+	released 2.1
+
+** svn353
+	fixed possible crash in QueueFrame
+
+** svn352
+	hopefully fixed rare crash when closing Search window
+	fixed crash #7898
+	added "Microsoft Text Service Module" to crash libraries
+
+** svn351
+	added settings "Ask for magnet action"
+	light color theme set as default
+	reimplemented all queue progressbar colors -> downloaded bytes, running chunks, done chunks
+
+** svn350
+	fixed searching for alternate sources
+	"Download to - Add as source" menu displays filename only
+	segment size selected by last user speed
+
+** svn349
+	maximum search interval can be set up to 9999 seconds
+	fixed done segments loading from Queue.xml
+	finished uploads window display whole file size
+
+** svn348
+	reimplemented exact displaying of downloaded size
+	displaying "User offline" instead of CID
+
+** svn347
+	reimplemented settings for maximum simultaneous files
+
+** svn346
+	fixed finished downloads logging
+	fixed downloading when segment speed limit was set
+
+** svn345
+	partial file sharing should work again
+
+** svn344
+
+*** WARNING ***
+  This version breaks information about downloaded parts of your queue.
+  It's recommended to finish all started downloads before update.
+  Queue won't be deleted, only everything will start from the beginning.
+*** WARNING ***
+
+	removed FileChunksInfo
+	partial file sharing broken - i'll fix it later
+
+** svn343
+	released 2.06	
+
+** svn342
+	[ADC] sending favorite IP in I4
+	fixed deadlock in QueueManager
+	something for PMs
+
+** svn341
+	some Linux fixes (DC++ SVN)
+	hopefully fixed crashes due to invalid TTH block size
+
+** svn340
+	added hub bloom filter (DC++ SVN)
+
+** svn339
+	fixed TTH verify for small files
+	removed autodisconnecting when speed is below 1B/s
+	hopefully fixed timer problems (reconnect, wrong uptime etc.)
+	DC++ SVN merge
+
+** svn338
+	allow files with $ in their name
+	some DC++ SVN merge
+
+** svn337
+	reverted debug window crash, but at least it doesn't lock
+	minimum chunk size set to 1 MB
+
+** svn336
+	toolbar fixes
+	DC++ SVN merge
+	QueueFrame shouldn't display weird TTH strings for filelists/testsurs
+	hopefully fixed crash on exit with opened debug window
+
+** svn335
+	fixed QueueManager's crash
+	something from DC++ 0.703
+	allows to set one segment in QueueFrame
+	some changes about timing in TransferView
+
+** svn334
+	fixed too often "Download starting" message
+	fixed double click action on download transfer
+	changes in users' nick processing
+
+** svn333
+	fixed missing library directory
+	fixed crash due to division by zero
+	small stuff from DC++
+
+** svn332
+	yaSSL replaced with OpenSSL
+	some DC++ SVN merge
+	hopefully fixed crash when changing queue priority
+
+** svn331
+	some TransferView optimization
+	fixed downloading more filelists at once
+
+** svn330
+	hopefully fixed average speed measuring
+	chunk size is equal to TTH block size
+	MDI windows are always maximized
+
+** svn329
+	some stuff about average speed measuring
+	DC++ version bump
+	again not tested !!!
+
+** svn328
+	hopefully fixed filelist downloads
+	some DC++ SVN merge
+	this svn hasn't been tested at all !!!
+
+** svn327
+	added "AdWare.Win32.BHO.cw" to crash libraries
+	added "Traffic Compressor" to crash libraries
+	some DC++ SVN merge
+	!!! filelist downloads broken (DON' REPORT IT AS A BUG!)
+	!!! sometimes crashes in QueueManager::UserQueue::remove
+
+** svn326
+	hash_* containers replaced with unordered_* to match the future C++ standard (DC++ SVN)
+	implemented periodic downloaded parts exchanging with partial sources
+	UPnP fixes (DC++ SVN)
+
+** svn325
+	some parts of code optimized for speed
+	reorganized QueueFrame's contextmenu code
+	added "Ashampoo Firewall" to crash libraries
+	added "System Mechanic Professional 7's Firewall" to crash libraries
+
+** svn324
+	better transfer's progressbar coloring
+	hopefully fixed "download starting" report
+	hopefully fixed URI encoding in Webserver
+	hopefully fixed problem with missing submenus
+	added some missing menubars
+
+** svn323
+	added "Stardock CursorXP" to crash libraries
+	removed slow chunk overlapping, because it's stupid and works very bad
+	selecting random chunk position for partial sources
+	slow downloads disconnecting is globally always on and can't be set below 1kB/s
+	don't group single items in TreeListView
+	changes in TransferView
+
+** svn322
+	some other menu stuff
+	removed autodrop slow sources (slow chunk overlapping will take over its function)
+	last download speed saved in bytes per second
+	queue match displays number of really added alternates
+	some fixes for TransferView
+
+** svn321
+	hopefully fixed crash #4095
+	hopefully fixed deleting some submenus
+	some menu stuff
+	removed critical section lock in Identity's destructor
+	added finished file TTH checking in debug mode
+	some fixes for slow chunks overlapping
+	added "Trojan.Win32.Agent.bi" to crash libraries
+	added "F-Secure Management Agent" to crash libraries
+	added "F-Secure Antivirus/Internet Security" to crash libraries
+	slow chunk will be overlapped if connecting source is more than 2x faster
+	"Typing notification" string changed to "Typing sound"
+
+** svn320
+	fixed crash #3980/#3985, #3986, #3987/#3988
+	small menu changes for favorite users (DC++ SVN)
+	experimental feature to overlap slow chunks when no free block available
+
+** svn319
+	released 2.05
+
+** svn318
+	fixed updating parent's status text in TransferView
+	fixed "Invalid request" again
+	fixed invalid expanding of subitems in TypedTreeListView
+
+** svn317
+	fixed updating user on connect (to show the ticked icon)
+	fixed granting slots
+	fixed client profiles update when changing URL
+	updated client profiles (THX Toast)
+	fixed too often hubname update in TransferView
+	small code cleanup
+	[ADC] fixed hub share amount
+	updated DC++ copyrights to 2007
+	compression is turned off if ratio > 0.97
+	some myinfo antispam stuff
+	checkbox "Emulate DC++ in this hub" is now translatable
+
+** svn316
+	fixed coloring unicode favorite nicknames
+	nonsegmented files download fix (DC++ SVN)
+	fixed number sorting in TransferView
+	optimized speed in TransferView
+	removed "Real time queue update" option (now it's always on)
+	hopefully fixed sound and popup when download is starting
+
+** svn315
+	fixed doubleclick in TransferView
+	optimized TransferView code
+
+** svn314
+	normalized TypedTreeListView to save some memory for subitems
+	hopefully fixed unicode nicks sorting (speed must be improved)
+	hopefully fixed memory problems with SearchResult
+
+** svn313
+	fixed flags in search window
+	reverted to string for country codes
+	saved memory for large filelists and queue window
+	removed SearchInfo instance and everything moved to SearchResult
+	fixed crashes #3857 and #3645
+
+** svn312
+	try to fix numerous crashes in Identity
+	fixed another remote exploit (crash #3762)
+	fixed user menu in mainchat
+	clean up Grant slot menus
+	saved memory for large searches, userlists and finished items
+	removed ColumnBase
+
+** svn311
+	ColumnBase's Node stores texts as an array of wchars to save very small memory
+	ColumnBase's Node and Emoticons use fast memory allocation
+
+** svn310
+	ColumnBase used as a data member and not parent class
+	removed ItemInfo instance in finished frames + clean up source
+	added root "All" to upload queue frame to display all files of all users
+
+** svn309
+	[NMDC] optimized userlist's memory usage a bit
+	translatable "Queued: " string
+	added "Malware MSIU32" to crash libraries
+	crash libraries saved in vector
+	garbage command is not sent in stealth mode
+	implemented ColumnBase class to allow further columns optimization
+	fixed problem with some Connection strings
+	real upload queue is optional and enabled by default
+	tstring used for countries list
+
+** svn308
+	optimized vtables in windows part
+	hopefully fixed crash #3666
+	onSecond and onMinute ticks supports 64bit times
+	first try to fix Hub reconnect (THX adrian_007 for some ideas)
+	user is not removed from upload queue when using small slot
+
+** svn307
+	hopefully fixed crashes #3667 and #3669
+	removing diacritics from Czech chars is disabled by default
+	optimized vtables in client part
+
+** svn306
+	fixed Invalid request when AntiFrag downloading was disabled
+	removed old-styled connection types
+	some code cleanup
+
+** svn305
+	fixed crash #3624
+	when slots are increased, queued users will be notified
+	position in upload queue is sent and displayed for "no slots" message (not in emulation mode)
+	workaround for menu crash on Windows Vista (crash #3599)
+
+** svn304
+	fixed Stack overflow on Get TTH menu item (crash #3604/3635)
+	[NMDC] fixed displaying own Connection type
+	[NMDC] fixed passive searches for unicode nicknames (THX PPK for report)
+	better userlist optimization for empty columns
+	begun work on real upload queue (idea from Possum mod)
+
+** svn301 - svn303
+	some SVN repository changes for better uploading to "tags"
+
+** svn300
+	fixed compilation warning
+	fixed removing Czech chars from chat/PM messages
+
+** svn299
+	code cleanup
+	fixed flag for partial downloads
+	[ADC] optionable emulation
+	[ADC] download/upload speed limit is sent
+	added some hublists
+	[ADC] fixed setting own identity
+	[ADC] workaround for hub count
+	[ADC] fixed multiline messages
+	single download fix (DC++ SVN)
+
+** svn298
+	fixed "kick" messages filtering
+	factor out some classes
+	fixed invalid secure connection to webserver's .css file
+	reverted flood control
+	stack size set to 128kB
+
+** svn297
+	corrected removing user commands on hub exit (DC++ SVN)
+	faster getting user's nick
+	fixed one of possible remote exploits
+	fixed chat nick completion + invalid chat coloring
+	fixed /me in ADC hubs	
+	changed way of processing hub status messages (more similar to DC++ now)
+	completely removed $PSR support
+	some code cleanup (THX Crise)
+
+** svn296
+	reverted to faster unicode converting
+	changed storing userlist texts
+	removed Pk and Upload speed columns from userlist
+
+** svn295
+	updated yaSSL
+	userlist E-mail column is hidden by default
+	fixed invalid importing progressbar colors from theme file
+	very small memory save for downloads, connections and in WaitingUsersFrame
+
+** svn294
+	minimize to system tray sets "below normal" priority
+	thread yield during an upload for better CPU time layout
+	added "ProxyFilter - Hide My IP 2007" to crash libraries
+	fixed assertion in PublicHubsListDlg (now it allows only single selection)
+	fixed rare crash when searching for some escaped characters (i.e. |||)
+
+** svn293
+	if there's no password for a hub, we will use default nick when adding this hub as favorite
+	Favorite hubs frame allow column sorting
+	much faster mainitem search in TypedTreeListView
+	fixed socket signal interrupts (DC++ SVN)
+
+** svn292
+	emoticons with alpha channels are supported
+	fixed problem with changing colors and missing userlist icons
+	fixed invalid texts in search frame
+	some memory optimizations (removed unnecessary virtual functions, grouped same-sized class members)
+
+** svn291
+	fixed invalid texts in userlist
+	something from DC++
+
+** svn290
+	fixed setting Auto priority from directory's menu
+	fixed invalid text color for IP column in Search frame
+	workaround for crash in FileChunksInfo::verifyBlock when can't allocate memory block
+	hopefully fixed crash in QueueFrame due to invalide sources list synchronization
+	reserved and commit stack size set to 64 kB
+
+** svn289
+	fixed "Bump" option in menubar settings
+	changed emoticon setup loading, should be more stable :-)
+	DC++ SVN merge
+
+** svn288
+	some fixes for emoticons
+	fast floating-points operations
+	cache for progressbar drawings, now it's much faster, but we must optimize it
+
+** svn287
+	fixed invalid user updating when trying to update hidden user
+	hopefully fixed executing on Win9x due to missing DLL export
+	very small memory save in Waiting users queue, Finished frames and Socket code
+	fixed some old links to berlios
+
+** svn286
+	another fixes for userlist optimization
+
+** svn285
+	fixed another crash in QueueFrame
+	fixed crash during Follow redirect
+	fixed memory leak when hub is disconnected automatically
+	fixed memory leak in ImageDataObject
+	right clicks on users work also with disabled userlists
+
+** svn284
+	fixed hang up/crash during readd/remove all sources
+	fixed bugs during show/hide userlist
+	hopefully fixed crash in QueueFrame
+
+** svn283
+	fixed invalid QueueItem deletion on exit
+	made workaround to avoid crash in FileChunksInfo::addChunkPos
+	small code changes in UploadQueueItem
+
+** svn282
+	hopefully fixed userlist crash
+	memory usage optimization for queue items - need to test queue item status
+	applied some patches from Patrol
+
+** svn281
+	readded missing chunk finish verify
+	begun work on userlist memory optimization
+	"Corruption detected" message will display TTH of corrupted file	
+
+** svn280
+	64bit times (DC++ SVN)
+	removed rollback support (DC++ SVN)
+	removed unnecessary resume position reset (DC++ SVN)
+	only refresh if there are directories shared (DC++ SVN)
+	some other changes from DC++ SVN
+
+*** MOVED FROM CVS TO SVN ***
+
+** cvs211
+	reverted to old data verification, but verified blocks are immediately flushed; it's very safe but slow down fast downloads :( so it must be improved
+	some changes from DC++ SVN
+	added constness to another functions
+
+** cvs210
+	added constness to another functions
+	webserver moved to berlios' server
+	disabled Omit frame pointers option to improve debugging
+
+** cvs209
+	fixed listview's infotips
+	fixed GDI leaks in emoticons dialog
+	fixed crashes in emoticons code
+	tweak in oDC-styled progressbar drawing
+	always using chunked transfer to ensure we will never lose a slot
+	added constness to a lot of functions
+	reduced Flags type size to save some memory
+
+** cvs208
+	hopefully fixed autopriority displaying in QueueFrame
+	I recommend to download Service Pack 1 for VS2005
+	fixed crash when removing waiting file from queue (THX redsaq for reporting)
+	fixed invalid default filename in Get TTH dialog (THX redsaq for reporting)
+	crash dialog "Your OS is too old..." should display error library name
+	replaced some slow ZeroMemory with CPU-optimized memzero
+
+** cvs207
+	fixed chinese tea in mainchat
+	added combobox with available bind IP addresses (ApexDC++)
+	a little bit faster userlist loading
+	DC++ SVN merge
+
+** cvs206
+	user's speed is displayed in kB/s
+	small chat code cleanup, so it could be a little bit faster
+	small cleanup in TransferView
+	added missing files
+
+** cvs205
+	updated yaSSL
+	fixed bug with autosending user's nick when opening PM window
+	improved the response time to close connections
+	some performance tweaks
+
+** cvs204
+	added constness to some functions
+	hopefully fixed silent crash in queue Filelists node (THX BugMaster for hint)
+
+** cvs203
+	DC++ SVN merge
+	fixed crash for non-segmented files
+	fixed invalid share size
+	optimized zero memory function
+	fixed bug when "too many same numbers" mainchat cheat message could not be disabled
+
+** cvs202
+	fixed some memory leaks (THX redsaq)
+	TTH inconsistency doesn't remove the source from queue anymore
+	when tempfile doesn't exist during queue loading, the file will be completely redownloaded
+	fixed missing Pk and Lock strings in some cases
+	improved data verification
+	DC++ SVN merge
+
+** cvs201
+	hopefully fixed deadlock on some queue operations
+	some fixes for finished uploads logging
+	some fixes in Share settings interface
+
+** cvs200
+	updated Czech language file
+	when private IP is detected, the passive mode is set by default
+	fixed default old sharing interface for Win9x
+	released version 2.03
+
+** cvs199
+	fixed GUI lock when many debug messages come
+	some code cleanup
+	removed beta version warning because betatesters don't need to be warned
+
+** cvs198
+	some code fixes
+	some unicode fixes for regexps
+	experimental: favor small code optimization
+
+** cvs197
+	DC++ SVN merge
+	fixed memory leak in UploadManager
+	some fixes in Sharing interface
+	code cleanup
+	hopefully fixed partial uploads
+
+** cvs196
+	fixed user download speed initialization
+	fixed one crash
+
+** cvs195
+	DC++ SVN merge
+	enabled function-level linking
+
+** cvs194
+	emptying process working set every 5 minutes
+	only chunked transfer's finish message is delayed
+	uploadmanager code cleanup
+
+** cvs193
+	fixed compilation as Release build
+	fixed displaying message "Client doesn't fully support TTH"
+	auto-priority doesn't set Lowest priority
+	removed green/red shield icons from queue frame, because all files should have TTH tree available
+
+** cvs192
+	DC++ 0.698 merge
+
+** cvs191
+	DC++ SVN merge
+	hopefully fixed Transfer doubleclick action
+	another fix for finished uploads logging
+
+** cvs190
+	hopefully fixed unicode search results
+	fixed search spam when downloading filelists
+	hopefully fixed finished uploads logging - no single chunks logged, only really finished uploads are logged regardless the last file position =)
+	some fix for loading PM history
+	DC++ SVN merge
+	flush file buffers when download finishes
+	hopefully fixed crash #150
+	updated WTL
+
+** cvs189
+	DC++ 0.696 merge
+	again saving user's nicks to queue.xml
+	fixed Winamp 5.09+ title mismatch when scrolling is turned on (BCDC++)
+	powrprof.dll load delay to speed up startup a very little
+	
+** cvs188
+	fixed crash #99
+	fixed loading verified parts
+	removed non-hashing support + big DC++ SVN merge
+
+** cvs187
+	fixed crash for files without TTH
+	HubFrame shows count as "X/Y Users" when some users are hidden
+
+** cvs186
+	[Win9x] old sharing interface is enabled on default
+	DC++ 0.695 SVN merge
+	hash_map to store multisource information
+	fixed wrong search socket disconnection on socket exception
+
+** cvs185
+	fixed crash #44
+	hopefully fixed absolute paths
+	updated STLPort
+	hopefully fixed execution on Win9x
+	some changes in QueueFrame
+
+** cvs184
+	version 2.02
+
+** cvs183
+	removed background picture
+	fixed compilation
+
+** cvs182
+	hopefully fixed wrong filelist paths when user's nick contain path char
+	added customizable folder with XML files - you need to have DCPPBOOT.XML in app folder
+	fixed changing priority to autopriority from paused
+	faster checking previous search results for dupes
+	fixed statusbar update in WaitingUsersFrame
+	updated Czech language
+
+** cvs181
+	Get file TTH tool runs in low priority thread
+	fixed strange chars in Hubtopic
+	[C] tag to mark chunked downloads
+	Fixed some potential buffer overflows (DC++ SVN)
+	a few code changes in TransferView
+	unicode support + changed font in TextFrame
+
+** cvs180
+	hash_map for queue
+	saved memory when userlist is hidden
+	fixed colors in Flags images
+	added $HubTopic support (iDC++)
+	hopefully fixed rare crash in QueueFrame::onCustomDraw
+	some fixes in context menu in FavoriteFrm and RecentFrm (THX Patrol)
+	finally fixed very old bug with non-working tooltips if they once disappear
+	vector for tree main items (maybe we can use hash_map in the future)
+	updated STLPort + added some optimization flags for STL building
+
+** cvs179
+	more files with same TTH can be added only if filesize is below 2 MB
+	deque for recent autosearches
+	faster hasOnlineUsers() function
+	reduced memory usage for a lot of users in hub
+	fixed crash when trying to search for something with no connected hub
+	fixed iterator corruption when readding or removing all sources
+	slist and more efficient remove for list of connected hubs
+	more efficient remove in FlatTabCtrl
+	fixed crash when connecting to offline user
+	thread-safe Identity map (I hope it won't be slower a lot)
+	fixed "User went offline" message in PMs
+	hopefully fixed updating Transferred's text in WaitingUsersFrame
+
+** cvs178
+	using deque again for TypedTreeListView, it looks faster :)
+	some multisource fixes from RevConnect
+	you can add more files with same TTH to queue
+	fixed deadlock in CDM Debug messages window
+	some performance tweaks for unicode converting
+	display [Offline] as a hubname when user is not in hub
+	saved memory for sources supporting TTHL extension
+	don't allocate large buffers on the stack
+	RLE compressed flags bitmaps
+	when slow user is disconnected, the Readd menu will display user's speed
+
+** cvs177
+	infotip displaying can be changed on runtime
+	using slist for TypedTreeListView subitems to save memory
+	notify more waiting users when some upload finishes
+	small fixes in UploadManager
+	HashFileMap iterator is constant
+	adc:// and adcs:// links are clickable
+	finished download connection can be removed by Close connection
+
+** cvs176
+	insertion into QueueItem, SearchInfo and ItemInfo Lists done in constant time
+	fixed recreating finished file when it's deleted and someone wants to download it
+	fixed bug with filelist checking
+	added some links into Help menu
+	code for sending partial search result has been moved to own function
+	added option to require pressing Enter to active user/search filter
+	segments for autodrop are checked every 40 second (instead of 20 sec before)
+	hopefully fixed problem with setting cheating string for fakers with many same numbers in share size
+	workaround to display OP commands when select users from different hubs in SearchFrame
+
+** cvs175
+	fixed some crashes
+	small code cleanup
+	always using single nick instead of all user's nicks
+	added option to set download connection attempts per second (default = 2; infinite = 0; previous version = 1)
+	using 32bit time values to save a small amount of memory
+	webserver is defaultly run on random port
+	when download finishes, it will be removed from transferview sooner than before
+	changed partial search result format (old clients won't be able to get partial files from you)
+	fixed bug that max sources for auto-search couldn't be set over 15
+	updated STLPort
+
+** cvs174
+	ignore list is now based on user instances and it's global; it should save some memory
+	fixed double search results when search filter was applied
+	PM windows limited to 200
+	some memory usage decreasing
+	removed some unuseful userlist columns; OPs can use Report user function to see that
+	search request is removed from queue when the search window is closed
+	fixed problem with opening incomplete filelists
+
+** cvs173
+	"Upload finished" message delay for 5 seconds to avoid unnecessary upload blinking when single chunk finishes
+	added [C] tag to state chunked transfers
+	fixed loading nicks from Users.xml
+	firewall icon displayed for all users
+	added option to not announce new versions (version.xml is still downloaded)
+	decreased memory usage especially for large queues
+	using GetTickCount again; I doubt that someone will run more than 49 days
+	fixed displaying outgoing PMs when incoming PMs are displayed in mainchat
+	size based segmenting isn't so strict now
+	fixed some focusing problems in Publist Hublists settings (THX Patrol)
+
+** cvs172
+	fixed shutdown timer
+	fixed late upload disconnection
+	hopefully fixed sorting segmented files by time and speed
+	fixed issue with opening logs
+	removed nicks from search spy - it saves many memory and it should also be anonymous
+	some other column fixes
+	fixed doubleclick on non-multisource files in TransferView
+	fixed popup preview in Settings
+	changes in copying user info
+	fixed some GDI leaks + removed XP styled menu to remove another GDI leaks
+	fixed stupid memory eating in Upload Queue
+	memory save for partial sources
+	removed some STL definitions
+
+** cvs171
+	fixed removing diacritics from national chars
+	always using STL exception to avoid Runtime errors
+	*.antifrag and *.dctmp files are always unshared regardless the "Remove forbidden" settings
+
+** cvs170
+
+*** WARNING ***
+  This version fixes a security bug, upgrade unless you want to experience runtime errors
+*** WARNING ***
+
+	fixed runtime error when only <nick> without message comes to mainchat (THX darwusch)
+	using UTF8 to get filelist from ADC users
+	fixed sharing finished files (THX MaynardK)
+	a few code fixes
+
+** cvs169
+	fixed bug in fake detection
+	fixed bug that dots in log filenames were transformed to _
+	hopefully fixed crash when subtracting filelists
+	fixed loading which columns are hidden in queue
+	bots shouldn't be checked on join anymore
+	added reason to Readd menu when TTH inconsistency occurs
+
+** cvs168
+	StrongDC++ 2.00 released
+
+** cvs167
+	changed hub column format from W to X/Y/Z
+	small code fixes
+	fixed downloading XML list from DC++ 0.401
+	DC++ SVN update
+
+** cvs166
+	fixed transfers sorting by speed and time left
+	fixed assertion when clicking dchub:// link without user nick
+	fixed hiding real bots
+	hopefully fixed transfer doubleclick action
+	moved all NMDC search result parsing to search result queue (beautiful, but rather test it :))
+
+** cvs165
+	small $MyInfo tweak
+	fixed /me stripping
+	ports boxes are grayed when Direct connection is selected (because ports are random and it has no meaning to set them)
+	fixed Multisource settings
+
+** cvs164
+	workaround for empty connection type in $MyInfo
+
+** cvs163
+	updated to 0.694 + SVN + fixes
+	fix in transfer limiter
+	small fix in PME
+	webserver session times out after 5 minutes
+	fixed webserver
+	fixed user icon updating when connection is established
+
+** cvs162
+	small changes in projects options
+	TLS port is randomized when using Direct Connection
+	increased file size level for auto-selecting max chunk count
+	removed "exception" dialog - why need it when it's stable? :))))))
+	removed exception code names (it only eats memory)
+
+** cvs161
+	fixed crash in Buffered Socket
+	version updated to 0.693
+
+** cvs160
+	reverted upload limiter code
+	fixed treelistview crash when deleting all items
+	fixed PM history
+	hub name is truncated only via " - "
+	revised BarShader code
+	decreased exe size a little bit
+	button for updating client profiles is disable during an update to avoid deadlock
+	fixed random crash when spamming with /strongdc++
+	hopefully fixed another memory leaks
+	fixed uploading partial TTH tree
+	DC++ SVN merge
+
+** cvs159
+	fixed another memory leaks
+	fixed long shutdown when loading a large filelist
+	DC++ SVN merge + some bug fixes
+	updated changelog(-en).txt
+	splash screen code cleanup
+	changed GET_TICK to use GetSystemTimeAsFileTime instead of GetTickCount to avoid the overflow
+	decreased CPU usage on GET_TICK() a little bit
+	removed a lot of buggy code copied from CZDC++
+
+** cvs158
+	one deadlock fix
+	connection attempt code revert in ConnectionManager
+	second try to remove bouble Grant slot menu item in search results
+	change in upload limiter (BCDC++ SVN) - please test it a lot
+	added support for = == > < >= <= != in the userlist and search result filter (DC++ SVN)
+	DC++ SVN merge
+	improved search result filter (but only parent items are filtered) - please test it a lot
+	fixed some memory leaks
+	fixed some ports related issues
+
+** cvs157
+	fixed parsing %[targetdrive] variable in target folder settings
+	DC++ SVN merge
+	fixed double Grant slot menu item in search results
+	OMenu unicode support
+	removed support for generating NMDC-style file lists (old clients won't be able to download from you) (DC++ SVN)
+
+** cvs156
+	rollback in ClientManager
+	DC++ SVN merge
+
+** cvs155
+	fixed hub connecting problem with obsolete ZLine
+	hopefully fixed crash in ConnectionManager
+	patches and fixes from DC++ SVN
+	Search for alternates and Slow download disconnect menu items enabled for downloads only
+	speed up treelistview grouping
+	changed ClientManager's critical section to RWLock
+
+** cvs154
+	hopefully fixed last verification for files without tth tree
+	change in connect attempt interval
+	hopefully fixed my nick and timestamp colors problem in Settings
+	fixed HubFrame::onSpeaker memory leak (BCDC++ SVN)
+
+** cvs153
+	added debug message box into FileChunksInfo
+	whole splash screen is being repainted during startup process
+	user status in queue should be correctly updated now when user goes offline
+	hopefully fixed removing users and other problems when there are no free blocks available
+	clean up in NmdcHub
+	changed default emopack to Kolobok
+	"Use alternate limiting" is now translatable
+	hopefully fixed invalid "running" status
+
+** cvs152
+	hopefully fixed chat/pm delay (THX PPK)
+	DC++ SVN merge
+	directory tree is disabled when loading filelist
+
+** cvs151
+	fixed a crash on kick message
+	fixed a crash on broken tag without slots number
+
+** cvs150
+	DC++ SVN merge
+	hopefully fixed a deadlock in Socket::writeTo (fulDC SVN)
+	hopefully fixed a crash QueueFrame while updating the source list (fulDC SVN)
+	hopefully fixed upload limiter
+
+** cvs149
+	DC++ SVN merge
+	threaded filelist should be thread-safe now (fulDC SVN)
+	alteranes are searched up to all segments are reached
+	small fixes from CZDC++
+
+** cvs148
+	DC++ SVN merge
+	search result count is reset to zero on new search
+	hopefully fixed rare deadlock during share refresh, especially on dual core CPUs (THX Mlok)
+	updated "Thanks" in About dialog
+	some other performance improvement in TypedListViewCtrl (fulDC SVN)
+	added threaded filelist loading - NOT MUCH STABLE YET !!! (fulDC SVN)
+
+** cvs147
+	some chat optimizations
+	last TTH verification checks only unverified parts
+	DC++ SVN merge
+
+** cvs146
+	increased filelist buffer to 512kB
+	fake detection commands aren't displayed in hub tab now
+	fixed missing hub commands but there's still something wrong with them
+	small change in chunking
+	DC++ CVS merge
+
+** cvs145
+	please use my modded STLPort version
+	added filelist window creation check to avoid crash
+	DC++ CVS merge
+	correct hub identification for search results
+	search results counter now counts all results and not only unique TTHs
+	small change in search results queue
+	changed userlist icons (remember that firewall icon is displayed only when you are passive)
+	old pdb file is deleted before linking
+	TTH leaves are not logged anymore
+	added finished uploading logging (CZDC++)
+	enabled link-time code generation for release build
+	source revising + updated copyright lines
+	socket buffers below 1024 use default size
+	hopefully fixed crash in ChunkOutputStream
+	optimized columns switching code
+
+** cvs144
+	improved connection type settings
+	settings rearranged a bit + removed some obsolete options
+	fixed connection mode displaying for non-NMDC users
+	fixed checking filelist
+	completely changed all icons to Vista style
+	DC++ CVS merge
+	hopefully fixed removing users from upload queue
+	fixed deadlock when adding parent directory of shared folder to sharelist
+	updated to STLPort CVS (!!!) - you need to comment out the block where it gives error
+	hopefully fixed invalid fireball status
+	hopefully fixed problem with different owners in ShareManager::removeTTH
+	added some missing color exports/imports
+	changed default font to Tahoma and background is a little bit lighter
+	hopefully fixed sending away msgs to bots
+	fixed search speed icons
+	hopefully fixed frozen download progressbars; "Waiting to retry" displayed when nothing to do
+	column header strings are compared case sensitively to gain some performance
+	remaining time to finish whole file is displayed for uploads
+	hopefully fixed bug in ShareManager causing invalid search results with share cache or weird crashes (THX FarCry for help)
+		not a final solution, because it's slower especially exiting application takes longer time
+
+** cvs143
+	fixed downloading TTH tree
+	small TypedTreeListViewCtrl cleanup
+	debug mode also uses stlport debug mode (much much slower but easier to debug)
+	fixed caption text corruption due to RTL
+	some fixes for favorite hub dependent connection mode
+	fixed negative timeleft when upload limiter was enabled
+	improved new connection handling for free chunks
+	fixed file speed dependent features (slow download disconnecting etc.)
+	something about user's upload speed (when user has uplimit, speed per slot is displayed...)
+	parsed hub title to name and description via first occurence of " - " or " "
+	DC++ CVS merge
+	added list of buggy libraries to inform user which application caused a crash
+	don't autodrop the file's faster source
+	fixed upload queue crashes
+	SearchQueue and SearchResultsQueue are now "deque" instead of "list"
+	removed Get MP3 Info function
+
+** cvs142
+	StringDefs and Resources clean up
+	hopefully fixed user commands context
+	verify more blocks during download to speed partial file sharing and finish (RevConnect CVS)
+	remove source after tth inconsistency error (RevConnect CVS)
+	partially fixed OnlineUser thread synchronization during fake check
+	TypedTreeListView optimizations
+	TransferView code improvement (maybe needs more code cleanup and some performance tricks)
+	added RTL language support (DC++ CVS)
+	fixed some deadlocks and added new one :-)
+	DC++ CVS merge
+	some improvements and fixes from CZDC++
+	fixed partial chunk transfers
+	displayed [P] flag for partial transfer
+	some multisource fixes
+	connection is closed after 3 unknown commands (due to bug in some clients which send more data than required)
+
+** cvs141
+	favorite hub's connection settings should work well again
+	fixed grouping in TreeListView
+	hopefully fixed bug when PM tab got bold on user update
+	improved chunk overlapping
+	DC++ CVS merge
+	temporarily disabled filelist cache until they fix it in DC++ CVS
+	fixed path to GeoIP file
+	updated STLPort to 5.0.1; I didn't compile it and it works :) but it needs to define STLP_NO_IOSTREAMS in stl_user_config.h
+
+** cvs140
+	fixed some %[xxx] macros
+	hopefully fixed crash during filelist checks	
+	remove getOnlineUser() references
+	if you want to use hub dependent connection mode, you have to set Direct Connection as global (will be fixed later)
+	fixed crash when user with same numbers in sharesize comes to hub
+	faster getLegacyUser processing
+	search result buffer increased to 16kB
+	fixed path to some config files
+	better fix for nmdcExpectedConnection
+	some fixes in window popups
+	small fix in ShareManager
+	faster adding filelists to transfer window
+
+** cvs139
+	fixed %[mynick] parameter
+	fixed hubname updating in Windows menu
+	fixed hubname displaying in balloon popups and PM notifications
+	fixed crash when manually hashing zero-length files
+	parameter names all updated, your current %[xxx] macros will break all over, on the upside they're now more or less unified (DC++ CVS)
+	hopefully fixed crash when error during decompression occurs
+	hopefully fixed crash with nmdcExpectedConnection
+	verify block on chunk done (RevConnect CVS)
+	fix in search results queue
+
+** cvs138
+	first try to fix all remaining crashes in TransferView
+	fixed bug with empty regexp
+	fixed special OP commands
+	fixed user CID loading for default settings
+	fixed share size handling
+	DC++ CVS merge
+
+** cvs137
+	fixed double user commands on reconnect
+	enabled full optimization + favor fast code
+	changed PME to non-iostreams version
+	removed iostreams dependency
+	DC++ CVS merge
+	added Security Certificates icon to Settings
+	hopefully fixed bug with removing favorite users
+	fixed CID loading
+
+** cvs136
+	rewrote socket code to remove some old hacks and add some new (DC++ CVS)
+	now using standard windows error messages for socket errors (DC++ CVS)
+	added basic SSL support (DC++ CVS)
+	fixed a bug with file list loading and filenames differing in case only (DC++ CVS)
+	fixed small bugs in segmented downloading
+	fixed downloading filelist from 0.401
+	some ADC fixes
+	fixed passive detection in hubs where users' IPs are available
+	a few flags are shown in transfer status, [T] = TTH check on, [Z] = zlib on, [R] = rollback performed, [S] = secure transfer (DC++ CVS)
+	more DC++ CVS merges
+	more CPU optimizations (need testing)
+
+** cvs135
+	fixed crash when chunk finishes
+	DC++ CVS merge
+	fixed "Ignore TTH searches" string in Search Spy
+	fixed another crash when checking for update
+	fixed user commands' tags for own nick
+	fixed crash in TransferView :)
+	fixed problems with loading fullsized temp files
+	fixed transfer's menuitems for more selected items
+
+** cvs134
+	fixed ZLine implementation
+	fixed crash when checking for update
+	fixed search spy
+	fixed %[mynick] in hub's commands
+	hopefully fixed long delay when making changes in share settings
+	hopefully fixed the hang when trying to refresh twice (fulDC)
+	some fixes from new CZDC++
+	added NetLimiter crash detection
+	added unhandled exception name to exception info
+	fixed toolbar separators bug
+	fixed crash when partial search request comes
+	added "No Needed Part" error to Readd user menu
+
+** cvs133
+	fixed PM log saving
+	project ported to VS 2005 format
+	fixed Pk parsing
+	hopefully fixed weird crash in TransferView
+	workaround to fix a hang while drawing progressbar
+	added ZLine support (THX Jove)
+	fixed bug when some asshole sends $MyInfo shorter than 13 chars
+
+** cvs132
+	ChatCtrl assertion fix
+	hopefully fixed hub user command crash
+	fixed responding to active search requests
+	fixed user count updating when filtering userlist
+	fixed PM log loading
+	updated WTL
+	fixed advanced resume with TTH bug (THX Pothead)
+	removed obsolete SFV check (THX WereWiking)
+	removed flush for every verified chunk (need optimisation!)
+	fixed firewall icon display when using hub dependent mode settings
+	fixed bumped menubar preview in Settings (THX Dreamveawer)
+
+** cvs131
+	hopefully fixed size in TransferView
+	optimized no free block detection
+	cheating messages are displayed for OPs only
+	hopefully fixed all problems with unicode
+	fixed crash when opening local filelist without CID
+	small change in ChatCtrl
+	added debug data in DownloadManager
+
+** cvs130
+
+*** WARNING ***
+   This is experimental build. Many features doesn't fully work, especially favorite users...
+   Please don't report visible bugs, but only some hidden little bugs.
+*** WARNING ***
+
+	completely rewritten user identification (DC++ CVS + many changes to work properly)
+	hopefully fixed crash when manually changing number of segments
+	fixed compression amount displayed on transfer's progressbar
+	fixed many compilation warnings; compiles well with _STLP_HAS_SPECIFIC_PROLOG_EPILOG :)
+	IPs and flags are also displayed when no slots available
+	fixed crash in setActiveSegment
+	decreased CPU usage by lowering hub's statusbar update interval
+	firewall icon is displayed only if you can't connect to the user
+	changed hub share counting routine to decrease CPU usage
+	small fix in OMenu
+	small fix in BufferedSocket
+	faster unicode converting (fulDC)
+	faster chat processing (CZDC++)
+
+** cvs129
+	added finished file sharing (RevConnect)
+	updated to last WTL CVS
+	hopefully fixed crash when file is removed from queue
+	added options to set queue progressbar colors
+	downloading chunks are displayed on queue progressbar
+	nonexisting files are removed from hash database on rebuild
+	fixed size displaying in Get TTH tool
+	fixed crash during overlapped download
+	NetLimiter is detected via its library
+	fixed default priority
+
+** cvs128
+	fixed alternate sources loading
+	small speeding up when having a lot of downloads
+	added "forbidden files" feature to ADLSearch (it's last OP feature I've added)
+	moved filelist checking to own thread
+	small fixes in TransferView
+	workaround to fix > 100% percentage; such segments are disconnected
+
+** cvs127
+	some DC++ CVS merge
+	hopefully fixed crash in TransferView
+	fixed hang when kicking many users
+	refresh userlist item isn't available when hub supports QuickList
+	fixed memory leak in FileChunksInfo
+	added option to have tabs on top
+	small change in QueueFrame's progressbar code
+	chunk transfer is enabled only when there are at least 2 active segments to decrease CPU usage
+	updated PCRE to 6.3
+	updated PME to last cvs
+
+** cvs126
+	'download starting' popup works again
+	added %[connection], %[slots] and %[uplimit] params to RAW commands
+	tweaked file average speed and remaining time
+	fixed "Disconnected" before logging to hub
+	added some AMD/MMX/SSE CPU optimizations
+	removed application dependency on psapi.dll
+	mainchat tested and works in WinME
+
+** cvs125
+	enabled multiline for RAWs in favorite hub settings
+	partial sources are not saved to queue.xml
+	fixed disconnection when NL is running
+	QueueItem is stored for every download to lower CPU usage
+	responses to partial search are disabled for OPs
+	fixed redownloading corrupted chunks
+	hopefully fixed file corruption
+
+** cvs124
+	fixed some problems when trying to download TTH tree from partial source
+	slow download disconnecting also applies for partial sources
+	fixed updating collapsed items
+	try to fix unnecessary connections when there's no free block
+	improved segment size settings
+	added NetLimiter warning on startup
+	disabled chunk overlapping
+
+** cvs123
+	startup screen shows what's being loaded
+	fixed possible crash when shutdown timer is activated
+	fixed collapse and expand tree item
+	made some order in Settings' texts
+	some fixes in TransferView; maybe it's not complete, please report bugs
+	try to fix freezing during search
+
+** cvs122
+	changed counting file average speed
+	overlapped download pending chunk when all running chunks are unbreakable (RevConnect)
+	chunk splitting with download speed awareness (RevConnect)
+	fixed file corruption after disk full error (RevConnect)
+	fixed SetFileValidData failing since UNICODE (RevConnect)
+	some DC++ CVS merge
+	ask slot retry timer decided by current connection queue size
+	auto drop source's min speed decided by current download connection amount
+	changed startup logo
+
+** cvs121
+	updated to zlib 1.2.3
+	fixed drawing bug in TransferView
+	updated to last wtl cvs
+	small fixes
+	changed client profiles host address to http://ghostface.asgards.org/
+
+** cvs120
+	hopefully fixed rare crash in QueueFrm
+	changed statusbar's tooltip duration to 30 seconds
+	hopefully fixed rare crash when opening Toolbar settings page
+
+** cvs119
+	full TTH check is enabled by default
+	fixed "onMyNick" sound in chat when emoticons are disabled
+	workaround to fix No Free Block message when file is not finished yet
+	assertion fix in HubFrame
+
+** cvs118
+	hopefully fixed Legolas' bug in PM's emoticons
+	fixed doubleclick in TransferView
+	fixed crash on $Supports from disconnected user
+	hopefully fixed download resuming
+
+** cvs117
+	small ugly fix in queuefrm
+	set correct flag for autodrop slow sources
+	fixed tabs text color
+	readded ability to disable TTH checking on download finish, but it works only when more than 75% of file is verified
+	small tweak in filelist refresh
+	added ability to change emopacks in PMs (THX Crakter)
+
+** cvs116
+	updated to last wtl cvs
+	added disconnection when partial upload fails
+	added emoticons dialog to PrivateFrm (THX Legolas)
+	updated to new bzip2 library
+	fixed copying international characters in SearchFrm
+
+** cvs115
+	added reason to removed partial sources
+	transfer should be seen as partial, check File column
+	DC++ CVS merge
+	fixed crash when partial search result comes and hub is closed
+
+** cvs114
+	fixed crash with invalid $Lock on login
+	fixed crash during search when no ip is present
+	small ugly fix in TransferView
+	small change in tempTarget setting
+
+** cvs113
+	hopefully fixed status text when redownloading corrupted file
+	added vertical scrollbar to magnetlink field in TTH tool dialog
+
+** cvs112
+	some stuff from CZDC++ 0.666[K]
+	hopefully fixed crash in HubFrame
+	fixed another crash in TransferView
+	fixed displaying upload compression ratio
+	fixed IP column blinking for mainitem in TransferView
+	hopefully fixed crash in QueueFrame
+	fixed TTH leaves displaying in TransferView
+	fixed assertion hit when trying to upload nonsegmented file
+
+** cvs111
+	fixed file size in TransferView
+	fixed downloaded size in Queue Frame
+	fixed saving queue on exit
+	partial source is removed from queue when no part left
+
+** cvs110
+	fixed compilation
+	some fixes in TransferView
+	removed option to disable showing chunk info due to CPU usage
+
+** cvs109
+	lowered CPU usage when realtime queue updating is enabled but queueframe is closed
+	fixed issues  with BCDC++ filelists (THX Pothead)
+	removed memory saving, it did too many unexpected things :(
+	performance tweaks in TypedTreeListViewCtrl
+	removed TigerCheckStream adding on fly; it's not needed due to chunk transfers and it saves CPU and avoids a crash
+	fixed resource leak in QueueFrame (THX PPK for report)
+	fixed resource leak on exit
+	another fix for upload disconnect; i hope NetLimiter won't be so sensitive to this method
+	fixed issue with slow downloads disconnecting
+	begun work on partial file sharing
+		idea and some code from RevConnect, but it's not based on Kademlia and is not compatible with it
+
+** cvs108
+	progressbar in queue isn't updated when realtime queue updating is disabled
+	some more tweaks in userlist
+	memory save for large queues and many downloads (needs tests)
+
+** cvs107
+	fixed frozen download progress
+	small fixes in queue code
+	fixed Remove user from queue in transfer's context menu
+	fixed crash in TransferView
+	fixed qi->hasTree status
+	fixed crash during setting tth tree on fly
+	fixed getting MP3 info from filelist
+	some performance tweaks
+	userlist fixes
+
+** cvs106
+	fixed dupe search results
+	changed connection retry interval from 1 minute to 2 minutes
+	fixed removing closed connections
+	fixed upload queue frame redrawing
+	fixed infinite loop in QueueManager
+	random TCP/UDP ports are set on startup when Direct Incoming Connection is enabled
+	added betaversion warning dialog
+
+** cvs105
+	fixed crash when searching
+	speed up userlist loading
+	TransferView is based on TypedTreeListViewCtrl
+	another minor changes in TypedTreeListViewCtrl
+
+** cvs104
+	small fix for frozen uploads fix; now it's applied only when file is being sent to avoid premature disconnect when no slots are available
+	frozen uploads are automatically disconnected when speed falls down to 0B/s to free a slot
+	fix in TransferView
+	tweak in slow download disconnecting
+	begun work on TypedTreeListViewCtrl (TypedListViewCtrl derived class with tree structure)
+		+ rewritten searchframe grouping code
+
+** cvs103
+	small fix in filelist checking
+	small fix in Transfer grouping
+	fixed case sensitive nicks
+	fixed userlist flickering on WinXP
+	hopefully fixed bug with frozen uploads; process shouldn't hang in memory anymore (will it fix also a problem with No Free Blocks ???)
+
+** cvs102
+	fixed TestSUR checking
+	rewritten code for grouping downloads in TransferView
+	fixed filelist downloading from old clients
+	fixed slow download disconnecting's possibility to crash
+	fixed bug in DC++ emulation (THX XiND for report)
+	fixed context menu in chat line (THX ToH for report)
+	fixed drawing filter combobox when userlist is hidden
+	fixed $ListLen receiving
+	new connection settings, please check settings page (DC++ CVS)
+	no longer fallbacks to passive mode on failed UPnP (DC++ CVS)
+	small workaround to avoid crash in NetLimiter, but I don't know whether it will work
+
+
+** cvs101
+
+*** WARNING ***
+  This version fixes a security bug, upgrade unless you want to risk losing data
+  anywhere on your drive, this error affects all clients from 0.307 to date (thanks cologic for finding it)
+*** WARNING ***
+
+	little tweak to avoid connection spam (I hope it will work)
+	DC++ 0.674 merge
+	drawing tweak in TransferView
+	fixed verifying TTH progress displaying
+	fixed Rm.'s stupid regexp
+	tweaked segmented downloading a bit
+	removed saving of directories scheduled for download, since the individual files should appear in the queue fast enough that
+	  this will rarely be used (since file lists are free and downloaded almost instantly) - DC++ 0.69 CVS
+	fixed crash/deadlock while searching
+
+
+** cvs100
+	fixed favorite hub connection mode
+	maybe fixed crash on exit
+	fixed crash with long RAW commands
+	some drawing optimization for progressbars
+	removed ISP column to save some CPU cycles
+	fixed memory leak for menu's titles
+	some fixes for favorite hubs columns' settings (fulDC SVN)
+	fixed memory leak in upload queue
+	added "Checking client..." message to Transfers (zDC++)
+	improved last TTH verification
+	fixed scrolling when switching between hub windows
+	added emoticons dialog (THX Rm.)
+	fixed rare deadlock when faker is found
+	fixed deadlock when searching
+	different, maybe more efficient, fix for deadlock/crash in ConnectionManager ;)
+	added support for emoticons pack (save it to EmoPacks subfolder)
+	fixed memory leak in NetLimiter detection
+	fixed memory leak in hub column saving
+	IP addresses are visible for everybody
+
+** cvs99
+	fixed crash for partial filelists
+	fixed strange bug when random filelists were downloaded
+	updated to 0.673
+	fixed disconnecting when uploading at very low speed
+	some hub optimizations (CZDC++ 0.666[H])
+	upload timeout on exit
+	fixed compression status on main item in TransferView
+	fixed segment remaining time in Transferview
+	fixed list columns loading in UploadQueueFrame
+	added connecting to next waiting user in upload queue when slot is released
+
+** cvs98
+	fixed crash in usercommands for disconnected hubs
+	fixed NetLimiter detection
+	DC++ CVS merge - partial file sharing
+	improved auto resorting in SearchFrame
+	fixed filelist checking on user join
+	ability to add files to queue through webserver (buggy :( )
+	fixed filtered results displaying
+	fixed unicoded search results
+	ADC is not finished yet, so all unknown commands can be transferred to NMDC
+	some other changes from CZDC++
+
+** cvs97
+	full upload file size is shown in Transfers
+	fixed crash on copying info about nonexisting item in Queue Frame
+	some translation fixes in OperaColorsPage (THX Warrior)
+	some changes from CZDC++ 0.666[G]
+	small change in NetLimiter detection
+
+** cvs96
+	next fix for ConnectionManager deadlock =)
+	fixed user status detecting
+	changed queue saving from seconds to minutes to avoid file corruption on crash
+	small fix in TransferView
+	fixed deadlock in QueueManager
+	reverted if(...) back to dcassert(...) in QueueManager, it might crash more, but I really need to fix bug in QueueManager
+	fixed a few crashes
+	auto-disconnecting slow sources has less priority than manual settings
+	fixed icon loading from file
+	added options to set accepted timeouts/disconnects
+
+** cvs95
+	fixed assertion hit in QueueManager
+	fixed TransferView crash
+	added reason to Readd source menu in queue
+	added missing typing notification sound to private messages
+	DC++ emulation is enabled when entering hub using Quick Connect
+	download is disconnected when priority is changed to paused status
+	some changes from new CZDC++
+	maybe deadlock in ConnectionManager finally fixed :)
+
+** cvs94
+	fixed search results sorting
+	small fix for public hub list
+	DC++ CVS merge - Updated to ADC 0.9
+	readded Refresh userlist
+	fixed maximum alternates settings
+	added /csfd chat command (THX Atom)
+	added typing notification sound event
+	readded autodrop sources below 1.2 kB/s to avoid abusing of multisource downloading
+
+** cvs93
+	changed icon loading when column is hidden
+	added upload timeout check when exiting
+	fixed segment size for $Get command
+	fixed redownloading corrupted blocks
+	flushing is done after every finished chunk to avoid data corruption
+	fixed segment disconnection when segments count is higher than maximum allowed segments
+	fixed Window menu for other languages than English
+	fixed dupe items issue in Color settings
+	garbage command changed to NMDC protocol format, it shouldn't time out anymore
+	fixed menu header in userlist
+	removed Refresh userlist
+	fixed tag when Socks5 is used
+
+** cvs92
+	changes in doLastVerify
+	fix in QueueManager
+	some changes from CZDC++
+	some fixes for header settings (need some more fixes !!!)
+	removed critical section recursion check, it's unnecessary because ntdll does the same thing
+	fixed deadlock in ConnectionManager, I hope it won't cause other problems (THX FarCry for help)
+	a little bit speed up userlist loading
+	added Ctrl+A shortcut to select all items in list
+
+** cvs91
+	fixed disabling diacritics remover in PMs
+	fixed exceptioninfo.txt version info
+	oops, I am stupid or what? why I commented out that Lock in ConnectionManager? fixed :)
+	improved lists columns settings (CZDC++)
+	improved hub dependent connection mode
+	finally fixed removeSource(s) and readd, maybe :)
+	DC++ CVS merge
+
+** cvs90
+	changed upload limiter policy to 5*(slots+1)
+	removed Lock in LastVerify. I think it's unnecessary there because download isn't running.
+	fixed deadlock when checking for fireball
+	fixed toolbar buttons
+
+** cvs89
+	removed debug dialog
+	fix for QueueManager::getNext from RevConnect (I hope it will work now)
+	added option to use old oDC progressbars style
+	refixed autopriority
+	added ZoneAlarm detection (Zion++)
+	DC++ 0.670 synchronization
+	disabled uploaded chunks logging (idea from CZDC++)
+	fixed deadlock collision between QueueManager and TransferView
+	fixed dchub url parsing
+
+** cvs88
+	fixed a little issue with tth trees and 'QueueItem::FLAG_EXISTS' flag
+	added messagebox to QueueManager due to debugging (it'll removed when problem is fixed)
+	fixed 2 memory leaks and ensured that i->qi will be nulled when qi is deleted
+	hopefully fixed crash in setRunning
+
+** cvs87
+	fixed adding alternates to queue
+	fix for tth tree's progressbars
+	DC++ CVS merge
+	fixed autopriority
+
+** cvs86
+	assertion fix
+	fixed problem with downloading next file from same user
+	hopefully fixed recursive locks :)
+	fixed PM read log (fulDC)
+	removed unnecessary RLock in ShareManager (fulDC)
+	fixed short freeze when checking filelist
+	search results grouping is dependent on file size
+
+** cvs85
+	should compile now
+	fix? for QueueManager::removeSource
+
+** cvs84
+	fixed chunk transfer with $UGetBlock
+	fixed chunk progressbars displaying
+	added simple condition to avoid recursive locks
+	hopefully fixed search queue bug
+	fully compatible with WTL 7.5.5002 (I use patched WTL CVS)
+	fixed issue with segmented downloading and TTH trees
+	small fix in queue to avoid adding same file with different name but same TTH root
+	hopefully fixed problem with removing users from queue
+	added option to check only unverified chunks after downloading
+	added chunk remaining time
+	fixed unicode in webserver
+	added searching in webserver (it doesn't work in Opera)
+	some fix for advanced resume (BCDC++)
+
+** cvs83
+	fixed TTH tree logging in Transferview
+	StringDefs and Resources.h code clean up
+	you can use %[targetdrive] in Unfinished Downloads Path (e.g. "%[targetdrive]\Temp\DCdownloads\") (BCDC++)
+	bug290: fixed escaping of search parameters (BCDC++)
+	fixed bug with kicking users with international nicknames
+	file download slots doesn't apply for filelists
+	fixed critical sections re-entering in Down/Up-loadManager
+	fixed sorting in upload queue frame
+	block size is a multiple of leaf size to ensure valid data verification
+	looks for '$' when unknown client command received
+
+** cvs82
+	fixed issue with international nicknames
+	fixed issue with unicode chars in timestamps
+	DC++ 0.6685 CVS merge
+	added doubleclick actions for userlist, mainchat and transferview (CZDC++)
+	block size set to 1 MB
+	readded switching to faster user on no free block
+	fixed elapsed time of downloading
+	fixed progressbars for files > 2GB
+	added chunk transfers for GetZBlock
+	fixed crash in QueueManager::getDownload(...)
+	rewritten search queue (THX Naga)
+	readded chat diacritics removing (THX popKorn)
+	added finished chunks grouping in finished uploads
+	removed global emulation; all features of multisource can be used w/o emulation only
+	added option to disable multi-source downloading and use standard way with rollback
+	added option to display chunk info on progressbars
+	added more userlist colors (CZDC++)
+	removed TTH checking; it's not needed anymore; last verification checks whole file now
+	removed option to disable compression on fly
+	debug commands detection split to hub and client cmds (THX PPK for the idea)
+	a little memory saving
+
+** cvs81
+	fixed UploadManager crash
+	fixed issue in segmented downloading
+
+** cvs80
+	optimized block size
+	fixed i->pos updating in TransferView for $ADCGET
+
+** cvs79
+	removed transfers grouping optimization - I don't understand the problem it did
+	DC++ CVS merge
+	EXPERIMENTAL : changes in segmented downloading to avoid losing slot when segment finishes
+
+** cvs78
+	little change in search timer
+	DC++ CVS merge
+	transfers grouping optimization
+
+** cvs77
+	reverted back to old WebServer code
+	instant userlist icons changing (THX ice)
+	fixed NetLimiter speed displaying
+	optimized progressbars for faster drawing
+	fixed infinite loop on hub connecting
+
+** cvs76
+	optimization in WebServer (THX xAyiDe)
+	update hub counts on hub reset
+	fixed detection as "RevConnect based client"
+	fixed listener crash on SearchFrame close
+	hopefully fixed HubManagerListener crash
+	added option to enable/disable antifragmentation method
+	updated Czech language
+
+** cvs75
+	small change in UploadQueue updating
+	fixed detection as "CZDC/BCDC based client" in DC++ emulation mode
+	small change to prevent being detected as "RevConnect based client" - it'll be completely fixed in next CVS
+	DC++ CVS merge + crash fixes + filelists fix + hashing fix
+
+** cvs74
+	fixed downloading whole folder with unicode characters
+	time to next search is displayed
+	added missing removeListener in FinishedManager, MainFrm, WebServerManager
+	added missing instant color changing in FinishedMP3Frame
+	DC++ CVS merge
+	fixed DC++ emulation with nonstandard connection types
+
+** cvs73
+	added critical section to UploadQueueFrame
+	added filenames for logging (from DC++ CVS)
+	added detection of rmDC++ in DC++ 0.401/2 emulation mode
+	file slots are used for filelists too
+
+** cvs72
+	fixed not responding to active searches (THX PPK for report)
+
+** cvs71
+	removed switching to faster user
+	changed Searchfrm's items drawing 
+	fixed hidden Rename button in Upload setting page
+	fixed another search bug
+
+** cvs70
+	DC++ CVS merge
+	fixes in TransferView
+	country flags in public hubs frame
+	fixed file slots
+	removed /dc++ command and messages moved to /strongdc++
+
+** cvs69
+	fixed 3 crashes in TransferView
+	hopefully fixed search bug (THX Chmelic for support)
+	removed critical section locking from TransferView::InsertItem (it will be reverted if crash occurs)
+
+** cvs68
+	DC++ 0.668 CVS merge
+	fix: crash in transferview
+	'connect' changed to 'getDownloadConnection' when switching to faster user (I hope it doesn't deadlock)
+	minimum IE version increased to 5.01, 5.5 (instead of 5.0)
+
+** cvs67
+	DC++ CVS merge -  without version number (0.6675)

@@ -1,0 +1,787 @@
+  -- StrongDC++ 2.42 --
+
+* synchronizace s jádrem DC++ 0.777
+* pøidána automatická detekce typu pøíchozích spojení
+* oprava stability
+* pøidáno nastavení pro vypnutí tématu Exploreru v seznamech a stromech
+* snad opraven omezovaè rychlosti pro velmi vysoké rychlosti
+* opravy DHT
+* aktualizace interních knihoven (OpenSSL, BZip2, ZLIB, boost) - opravuje pár bezpeènostních problémù
+* odstranìna závislost na STLPortu
+* zlepšen vıkon
+* pøidána podpora pro nastavení kódování oblíbeného hubu
+* emulace DC++ je ve vıchozím nastavení vypnuta (pro huby, které nejsou v oblíbenıch)
+* kódování webserveru zmìnìno na utf-8
+* session webserveru vyprší a po 10 minutách
+
+
+  -- StrongDC++ 2.41 --
+
+* opravena kompatibilita se staršími ADC klienty v pasivním reimu
+* oprava pádù
+* opraven deadlock
+* je dovoleno dávat OPy do seznamu ignorovanıch uivatelù
+* ve frontì se správnì zobrazuje stav dokonèenıch stahování
+* opraven pád na Win2000, pokud byly zapnuty vlajky státù
+* vlajky státù pøidány do seznamu uivatelù
+* pøekrıvání pomalù segmentù je aplikovány i s velmi pomalımi zdroji
+* vylepšena detekce klientù
+* seznam ignorovanıch uivatelù je uloen pøi ukonèení
+* záloky mohou bıt umístìny na jakoukoli stranu okna
+
+
+  -- StrongDC++ 2.40 --
+
+* poprvé 64-bit release
+* aktualizováno na nejnovìjší jádro DC++ BZR
+* lze vytvoøit spojení mezi 2 pasivními uivateli
+* spousta vylepšení a oprav pro DHT
+* DHT pakety jsou šifrovány
+* oprava padù
+* doplnìno pár chybìjících vlajek státù (THX RadoX)
+* snad opraveno UTF-8 v magnet linkách (FlyLinkDC++)
+* pøidána adresa hubu do kontextového menu ve frontì
+* zmìnìny vıchozí seznamy souborù
+* aktualizace knihoven OpenSSL, Boost a WTL
+* pøidány skupiny pro oblíbené huby
+* optimalizace chatu (THX Crise)
+* vzhled kopíruje nativní téma Windows
+* cesta k souboru s pøekladem nyní mùe bıt relativní k adresáøi se strongdc.exe
+* hodnota omezení rychlosti odesílání se zobrazuje ve sloupci Pøipojení (huby by mìly aktualizovat své skripty)
+* odstranìna kontrola TestSUR
+* spousta dalších oprav, zmìn atd. viz seznam zmìn pro vıvojáøe
+
+
+  -- StrongDC++ 2.30 --
+  
+* opraveny tokeny pro odesílání (extra sloty, fronta odesílání atd.)
+* pøidán øetìzec detekce starıch klientù
+* pokud není k dispozici èásteènı seznam souborù, bude staen úplnı
+* opraveny problémy pøi vypnutém segmentovém stahování (DC++ BZR)
+* opraven pád pøi velkém poètu spojení (DC++ BZR)
+* opravena informace o slotech v ADC hubech
+* opravena aktualizace vlastních informací pøi zapnutí omezovaèe na toolbaru
+* vylepšeno ruèní hledání nìèeho, co je naplánováno pro automatické hledání
+* opraveny problémy s OpenSSL
+* lepší detekce hubu pøi client-to-client spojeních
+* snad opraveny problémy s extra sloty
+* odeslání pozice ve frontì a šifrování jsou zapnuty, i kdy je aktivována emulace
+* implementace vyhledávacího nástroje DHT (vyaduje otevøenı UDP port 6245)
+* pøepsán omezovaè rychlosti
+* nìjakı další zmìny, opravy, optimalizace pamìti atd.
+ 
+
+	-- StrongDC++ 2.22 --
+
+* lepší detekce URL v chatu
+* oprava stability - teï u je to skoro perfektní :)
+* odstranìna detekce stejnıch èíslic ve velikosti sdílení
+* zmìnìna vıchozí URL na profily klientù
+* opravena grafika pøi 16-bitové barevné hloubce
+* pøepínání klávesou TAB funguje v oknì se soukromou zprávou
+* zkratka ctrl+m pro poslání soukromé zprávy v seznamu uivatelù
+* opraveno ztrácení aktivity ve stromì v nastavení
+* oznamování podpory TLS v NMDC hubech
+* malá optimalizace pamìti
+* pøidána podpora pro zabezpeèené HTTP pøipojení (https://)
+* zmìnìny binární pøedpony, aby souhlasily se standardem IEC 60027-2
+* pøidány extra sloty pro èásteèné sdílení
+* opraveno kopírování informací o slokách v seznamu souborù
+* záloky se nezvırazòují pøi dokonèení seznamu souborù/testsuru
+* alternativní zdroje jsou pøidávány i pøi vypnutém automatickém hledání
+* porovnávání fronty nyní stahuje pouze èásteènı seznam souborù
+* neúspìšné èasteèné seznamy souborù jsou odstranìny z fronty
+* doèasnı cílovı soubor je kontrolován na svou existenci pøed navázáním stahování
+* pøidána podpora TLS pro pøipojení k NMDC hubu (nmdcs://)
+* zmìnìno na stabilní verzi OpenSSL
+* vylepšena velikost segmentu pro èásteèné sdílení
+* opraveno zobrazování názvu ADC hubu v seznamu uivatelù
+* opraveny chybné stavové ikony v seznamech pøi pouití filtrování
+* opraveno moné poškození souboru pøi pádu
+* spousta dalších oprav (viz seznam zmìn pro vıvojáøe)
+
+
+	-- StrongDC++ 2.21 --
+
+* opravy stability
+* opravy šifrovanıch pøenosù
+* øetìzce v nastavení certifikátù lze pøeloit
+* nastavení "Odesílat neznámé pøíkazy na hub" se aplikuje i na soukromé zprávy
+* pøidán sloupec se šifrou do okna pøenosù
+* nefiltrované zprávy o kopnutí jsou obarvené jako zprávy serveru
+* pøidána hláška pøi ádání o slot
+* odstranìn starı pøíkaz pro odesílání bordelu
+
+
+	-- StrongDC++ 2.2 --
+
+*** VAROVÁNÍ ***
+  Všechna spojení mezi StrongDC++ jsou nyní automaticky šifrovány.
+  Pokud se vyskytnou problémy, mùete to vypnout v nastavení bezpeènostních certifikátù.
+
+  Od této verze nelze pouívat pøímé spojení na portech 80 a 2501.
+*** VAROVÁNÍ ***
+
+* pøidany nìjaké další knihovny, které by mohly zpùsobit pád
+* opraveno sdílení podsloek sloky Windows
+* opraveny problémy s vypnutım segmentovım stahováním
+* opravena monost shodit program na dálku (THX Fartman)
+* celé sloky lze stáhnout ani by se musel stahovat celı seznam souborù
+* pøidáno "Procházet seznam souborù" do vıchozích akcí seznamu uivatelù/pøenosù
+* opraveny uivatelské pøíkazy v kontextovém menu soukromıch zpráv
+* aktualizován bzip2
+* opraveny nìjaké problémy s vısledky hledání (DC++ BZR)
+* nìjaké opravy ve formátování chatu
+* opraveno nìkolik málo pádù
+* implementováno Rychlé vyhledávání (ApexDC++)
+* opravena celková velikost dokonèenıch poloek
+* pøidána volba pro umístìní uivatelskıch pøíkazù mimo submenu
+* pozice a velikosti lišt jsou ukládány
+* interval pro hledání je závislı na hubu
+* nastavení slotù má svojí vlastní stránku
+* ADL hledání se provádí pøes regulární vırazy
+* pøidána volba pro nastavení maxima automaticky otevøenıch slotù (Kulmegil)
+* implementovány nìjaká vylepšení do dialogu o stavu hashování (Kulmegil)
+* opraven únik pamì v nastavení sítì (ApexDC++)
+* opravy pro èásteèné sdílení souborù
+* pøidána podpora pro šifrované pøenosy v NMDC hubech
+* implementován novı systém detekce klientù (THX adrian_007)
+* pøidána doèasná oprava, aby se pøedešlo spamování portù 80 a 2501
+
+
+	-- StrongDC++ 2.13 --
+
+* zvıšen vıkon celého programu
+* opraveno nastavení sloupeèkù
+* opraveny nìjaké pády
+* opraven poèet vısledkù vyhledávání
+* opraveno naètení starıch hublistù
+* opraveno otevøení logù z chatu
+* opraveno obnovení seznamu uivatelù v ADC hubech
+* vylepšena automatická velikost segmentù (DC++ SVN)
+* vylepšeno mìøení ryclosti pøenosù (DC++ SVN)
+* lze pouívat stejnı název u sdlenıch virtuálních sloek (DC++ SVN)
+* opraven chybìjící stav "Staené èásti" ve frontì
+* sloka Windows nebude sdílena
+* nìjaké další opravy a optimalizace
+
+
+	-- StrongDC++ 2.12 --
+
+* opraveno pár vzácnıch pádù
+* opraveno poèítání poloek ve stromech (hledání, pøenosy)
+* opraven zbıvající èas u uploadù
+* pøidáno pøekrıvání pomalıch segmentù kdy se stahování souboru blíí ke konci
+* optimalizace CPU pro uivatelské pøezdívky
+* opraven stav posledního segmentu v oknì pøenosù
+* u se nepouívá pøípona .antifrag (staré doèasné soubory jsou stále podporovány)
+* zmìnìn zpùsob automatického skrolování chatu
+* pøepsán kód menu v chatu
+* odstranìna volba pro vypnutí skuteèné fronty na sloty
+* odstranìna detekce špatného softwaru
+* vylepšeno sdílení èásteènıch souborù
+* opraveno moné zatuhnutí
+* zobrazena hláška "Všechny stahovací sloty obsazeny" kdy se dosáhne maximálního poètu segmentù
+* odstranìno horizontální rozloení chatu/seznamu uivatelù, aby šlo kompilovat se standardním WTL
+* další opravy
+
+
+	-- StrongDC++ 2.11 --
+
+* opravena spousta pádù
+* opraven problém s minisloty
+* opravena velikost souboru ve frontì èekatelù na slot
+* opraven pøeklad DNS pro IP u oblíbenıch hubù
+* navráceno ukládání privní pøezdívky uivatele, aby byla známa i kdy se odpojí
+* opraveno ukládání èásteènì staenıch segmentù
+* opraveno antifragmentaèní stahování
+* oznámení o dokonèeném stahování je zobrazeno pouze pokud je staen celı soubor
+* pole pro heslo Socks5 není èitelné
+* snad opraveny problémy se stahováním ze seznamù souborù
+* nyní kompilováno pod VS 2008
+* aktualizace bzip2
+* opraven problém s kódováním pøezdívek v nmdc pøipojeních (DC++ SVN)
+* autopriota je zapnuta pouze pokud není zvolena jiná priorita
+* pro velmi rychlé uivatele se pouije dvojnásobná velikost segmentu
+* opìt dovoleno pouze jedineèné TTH ve frontì
+* opraveno nahlášení neexistujícího seznamu souborù (THX redsaq)
+* oprava pro pomalé routery (THX klirik)
+* zmìna bloom filtrù (DC++ SVN)
+* opraven problém s vısledky hledání
+* pøidány poloky menu uivatele do kontextové nabídky v oknì PM
+
+
+	-- StrongDC++ 2.1 --
+
+*** VAROVÁNÍ ***
+  Tato verze poruší informace o staenıch èástech ve vaší frontì.
+  Je doporuèeno dokonèit všechna zapoèatá stahování pøed aktualizací.
+  Fronta nebude smazána, pouze vše bude stahováno od zaèátku.
+*** VAROVÁNÍ ***
+
+* pøepsán kód segmentového stahování
+* místo CID se zobrazuje "Uivatel nepøipojen"
+* maximální interval pro vyhledávání lze nastavit a na 9999 sekund
+* v oknì Dokonèená odesílání se zobrazuje celá velikost souboru
+* v menu "Stáhnout do - Pøidat jako zdroj" se zobrazuje pouze název souboru
+* velikost segmentu je zvolena podle poslední rychlosti stahování od uivatele
+
+
+	-- StrongDC++ 2.06 --
+
+* opravena spousta pádù
+* pøidány informace o spoustì knihoven, které by mohly zpùsobit pád aplikace
+* pøi porovnání fronty je zobrazen poèet skuteènì pøidanıch alternativ
+* zmìny v odpojování pomalıch stahování
+* pro èásteèné zdroje se volí náhodnı segment
+* lepší obarvování progresbarù u pøenosù
+* opraveno hlášení "Stahování zaèíná"
+* opraveno kódování URI ve Webserveru
+* yaSSL nahrazeno OpenSSL
+* nìjaké zmìny z DC++ 0.705 SVN
+* odstranìno automatické odpojení pøenosu, pokud rychlost klesla pod 1B/s
+* snad opraveny problémy s èasovaèem (rekonekt, špatnı uptime atd.)
+
+
+	-- StrongDC++ 2.05 --
+	
+* opravena spousta pádù
+* opraveno zobrazování typu pøipojení
+* opraveno pasivní vyhledávání s pøezdívkami v unikódu (THX PPK za nahlášení)
+* velká optimalizace pamìti a procesoru
+* pøidána opravdová fronta na sloty (nápad z Possum modu)
+* opravena hláška "Invalid request", pokud bylo vypnuto antifragmentaèní stahování
+* odstranìny staré typy pøipojení
+* odstraòování diakritiky z èeskıch znakù je nyní standardnì vypnuto
+* pøidán "Malware MSIU32" do seznamu aplikací zpùsobujících pád StrongDC++
+* pøíkaz bordelu není odesílán pøi zaplé emulaci DC++
+* optimalizovány tabulky virtuálních funkcí
+* opraveno uivatelské menu v hlavním chatu
+* pøidána poloka "Vše" do okna fronty na odesílání pro zobrazení všech souborù od všech uivatelù
+* aktualizace profilù klientù (THX Toast)
+* spousta dalších oprav - viz Seznam zmìn pro vıvojáøe
+
+
+	-- StrongDC++ 2.04 --
+
+* aktualizace na DC++ 0.699
+* opraveno vytuhnutí pøi nìkterıch operacích ve frontì
+* opraveny nìjaké memory leaky (THX redsaq)
+* pøi chybì TTH u nebude zdroj odebrán z fronty
+* pokud neexistuje doèasnı soubor, tak bude soubor staen celı znovu
+* opraven chybìjící øetìzec Pk a Lock v nìkterıch pøípadech
+* opravena chybná velikost sdílení
+* opravena chyba, e hláška "too many same numbers" nemohla bıt vypnuta
+* snad opraven tichı pád v seznamu filelistù ve frontì (THX BugMaster za nalezení problému)
+* vylepšen èas reakce na zavøení pøipojení
+* sníeny nároky na pamìt s velkou frontou a velkımi seznamy uivatelù
+* klepnutím pravım myšítkem na uivatele funguje i pøi vypnutém seznamu uivatelù
+* pøi minimalizaci do systémové lišty se nastaví podprùmìrná priorita procesu
+* pøidán "ProxyFilter - Hide My IP 2007" do seznamu aplikací zpùsobujících pád StrongDC++
+* opraven vzácnı pád pøi hledání escape znakù (napø. |||)
+* pokud nemáme pro hub heslo, pouijeme vıchozí pøezdívku pøi vloení tohoto hubu do oblíbenıch
+* okno Oblíbené huby umí øazení sloupcù
+* pøidána podpora pro smajlíky s alfa kanály
+* opraven problém se zmìnou barev a chybìjícími ikonkami v seznamu uivatelù
+* "opraven" pád ve FileChunksInfo::verifyBlock pokud nelze alokovat blok v pamìti
+* cache pro vykreslování progressbarù, je to mnohem rychlejší
+* odstranìny sloupce Pk a Rychlost uploadu ze seznamu uivatelù
+* opraven jeden z monıch vzdálenıch útokù
+* úplnì odstranìna podpora $PSR
+* opravy pro ADC
+* pøidáno pár hublistù
+
+
+	-- StrongDC++ 2.03 --
+
+* opraveny nìjaké pády
+* snad opraveny absolutní cesty
+* aktualizace STLPortu
+* aktualizace WTL
+* starı vzhled sdílení je nastaven jako vıchozí pro Win9x
+* aktualizace na DC++ 0.695
+* formát poètu uivatelù je "X/Y Uivatelù" pokud jsou nìjací uivatelé skrytí
+* vylepšení vıkonu
+* bufer soubor je uloen na disk pøi ukoèení stahování
+* odstranìna ikonka zeleného/èerveného štítu ve frontì
+* automatická priorita nenastavuje nejniší prioritu
+* pracovní sada procesu je vyprázdnìna kadıch 5 minut
+* pár oprav pro zpodìnou hlášku "Odesílání dokonèeno"
+* pokud je zjištìna privátní IP, tak je standardnì nastaven pasivní reim
+
+	-- StrongDC++ 2.02 --
+
+* opraven èasovaè vypínání
+* opraveno pozdní odpojení uploadu
+* snad opraveno øazení podle èasu a rychlosti
+* opraven problém s otevíráním záznamù
+* odstranìny pøezdívky z vyhledávacího špióna - šetøí pamì a je to anonymní
+* opraven dvojklik na nesegmentovı soubor v Pøenosech
+* opraven náhled popupu v nastavení
+* opraveny nìjaké GDI leaky (+ odstranìny nabídky ve stylu XP)
+* ušetøena pamì pro velké fronty a velké huby
+* hláška "Odesílání dokonèeno" je zpodìna o 5 sekund, aby se pøedešlo zbyteènému blikání pøi dokonèení segmentu
+* pøidána znaèka [C] pro oznaèení segmentovıch pøenosù
+* opraveno naèítání pøezdívek z Users.xml
+* ikona firewallu zobrazena všem uivatelùm
+* pøidána volba pro neoznamování novıch verzí (version.xml je stále stahován)
+* opraveno zobrazování odchozích PM, pokud jsou pøíchozí PM zobrazeny v hlavním chatu
+* segmentování zaloené na velikosti není tak pøísné
+* opraveno zdvojování vısledkù hledání pøi aplikovaném filtru
+* poèet oken soukromıch zpráv omezen na 200 aby se pøedešlo vzdálenému zneuití
+* odstranìny nìkteré nepotøebné sloupce v seznamu uivatelù
+* poadavek na vyhledávání je odstranìn z fronty pøi zavøení vyhledávacího okna
+* opraven problém s otevíráním nekompletních filelistù
+* vdy je zobrazena pouze jedna pøezdívka místo všech pøezdívek uivatele
+* pøidána volba pro nastavení poètu pokusù na stahování za sekundu
+* kdy je stahování dokonèeno, bude odstranìno døíve a lze ho odstranit pomocí Zavøít spojení
+* opraveno znovuvytváøení dokonèeného souboru, pokud je smazanı a nìkdo ho chce stahovat
+* pøidána volba pro vyadování stisknutí Enteru k aplikaci filtru uivatelù/hledání
+* segmenty pro automatické odpojení jsou zkontrolovány kadıch 40 sekund (místo 20 sekund)
+* snad opraven problém s nastavením hlášky o podvádìní pro fakery se spoustou stejnıch èísel ve velikosti sdílení
+* doèasná oprava pro zobrazení OP pøíkazù pøi vybrání uivatelù z více hubù v oknì vyhledávání
+* více souborù se stejnım TTH lze pøidat pouze pokud je velikost souboru pod 2 MB
+* opraven deadlock v oknì CDM Debug messages
+* zobrazeno "Offline" jako název hubu, pokud uivatel není na hubu
+* zmìnìn formát pro vısledky èásteènıch souborù
+* opravena chyba, e maximální poèet zdrojù pro hledání alternativ nemohl bıt nastaven pøes 15
+* pokud je odpojen pomalı uivatel, v menu Znovu pøidat zdroj bude zobrazena jeho rychlost
+* koneènì opraven velmi starı bug s nefungujícíma tooltipama, pokud jednou zmizí
+* pøidána podpora $HubTopic (iDC++)
+
+	-- StrongDC++ 2.01 --
+
+*** VAROVÁNÍ ***
+  Tato verze opravuje bezpeènostní chybu, aktualizujte pokud nechcete zaít runtime chyby
+*** VAROVÁNÍ ***
+
+* opraven bug pøi detekci faku
+* opraven bug, e teèky v názvech log souborù byli pøevedeny na _
+* opraven pád pøi porovnávání filelistù
+* opraveno naèítání skrytıch sloupcù ve frontì
+* boti by nemìli bıt kontrolováni pøi vstupu
+* pøidán dùvod do menu Znovu pøidat zdroj, pokud nastane TTH inconsistency
+* opravena runtime chyba, kdy pouze <nick> bez zprávy pøijde do mainchatu (THX darwusch)
+* pouíváno UTF8 pro získání seznamu souborù od ADC uivatelù
+* opraveno sdílení dokonèenıch souborù (THX MaynardK)
+* opraveno odstraòování diakritiky z národních znakù
+* vdy se pouívají STL vıjimky, aby se pøedešlo runtime chybám
+* soubory *.antifrag a *.dctmp jsou vdy odsdíleny bez ohledu na nastavení "Odstranit zakázané"
+
+	-- StrongDC++ 2.00 --
+
+!!! Tato verze poruší zdroje u vašich souborù ve frontì a oblíbené uivatele, take o nì pøijdete !!!
+
+* zmìnìna grafika
+* rozdìlování segmentù s ohledem na rychlost stahování
+* ovìøení staeného bloku na konci segmentu
+* opravena spousta deadlockù
+* opravena spousta pádù
+* opravena spousta memory leakù
+* aktualizováno na poslední DC++ SVN
+* aktualizováno na STLPort CVS a WTL CVS
+* pøidány nìjaké AMD/MMX/SSE CPU optimalizace
+* mìla by bìet na Win9x
+* pøidáno sdílení dokonèenıch souborù
+* zlepšení vıkonu
+* odstranìny nìkteré staré funkce (Info o MP3, Kontrola SFV...)
+* projekt portován na Visual Studio .net 2005
+* pøedìlán user filter - pro aktivaci filtrování je vdy tøeba zmáèknout Enter
+* pro kompletní changelog viz cvs-changelog.txt
+
+	-- StrongDC++ 1.00 RC10 --
+
+* opraven problém s mezinárodními pøezdívkami
+* opraven problém s unicode znaky v èasovıch známkách
+* pøidána volba akce pro dvojklik v seznamu uivatelù, v chatu a v pøenosech (CZDC++)
+* pøidána volba pro automatické pøepnutí na rychlejšího uivatele na konci stahování
+* opraven uplynulı èas stahování
+* opraveno zobrazení progressbarù pro soubory > 2GB
+* pøidána podpora segmentù pro GetZBlock a UGetBlock
+* opraven pád v kritické sekci QueueManageru
+* pøepsána fronta hledání (THX Naga)
+* vráceno odstraòování diakritiky v chatu (THX popKorn)
+* pøidáno seskupování dokonèenıch segmentù v Dokonèenıch uploadech
+* odstranìna globální emulace; je-li to nutné pouijte lokální pro jednotlivé huby; všechny funkce segmentového stahování lze pouít pouze pøi vyplé emulaci
+* pøidána volba pro vypnutí segmentového stahování a pouití standardního zpùsobu s rollbackem
+* pøidána volba pro zobrazení informací o segmentu na progressbarech
+* pøidáno více barev do seznamu uivatelù (CZDC++)
+* mùete pouít %[targetdrive] v cestì Doèasného adresáøe (napø. "%[targetdrive]\Temp\DCdownloads\") (BCDC++)
+* stahovací sloty neplatí pro seznamy souborù
+* opraveno øazení ve frontì èekatelù na slot
+* snad opraven problém s odstraòováním uivatelù z fronty
+* opraveno unicode ve webserveru
+* seskupování vısledkù hledání je závislé na velikosti souboru
+* pøidána volba pro pouití starého oDC stylu progressbarù
+* pøidána detekce ZoneAlarmu (Zion++)
+* zmìnìna politika omezovaèe uploadu na 5*(sloty+1), aby se respektovaly pravidla DC
+* vylepšeno nastavení sloupcù seznamù (CZDC++)
+* vylepšeno nastavení reimu pøipojení zavislé na hubech
+* koneènì opraveno odebrat zdroj(e) a znovuvloení, snad :)
+* pøidána zkratka Ctrl+A pro vybrání všech poloek v seznamu
+* opraveno zdvojování poloek v nastavení barev
+* pøíkaz na odesílání bordelu zmìnìn na formát protokolu NMDC, u by to nemìlo timeoutovat
+* opraveno nastavení maxima alternativních zdrojù
+* pøidán do chatu pøíkaz /csfd (THX Atom)
+* pøidána zvuková událost pøi psaní do chatu
+* znovu pøidáno automatické odpojování zdrojù pod 1.2 kB/s, aby se pøedešlo zneuívání segmentového stahování
+* pøidán dùvod do menu Znovu vloit zdroj ve frontì
+* emulace DC++ je zapnuta pøi pøipojování k hubu pouitím Rychlého pøipojení
+* stahování je odpojeno, kdy je priorita zmìnìna do pauznutého stavu
+* zmìnìno ukládání fronty ze sekund na minuty, aby se pøedešlo poškození souboru pøi pádu
+* opraveno naèítání ikon ze souboru
+* pøidáno nastavení povolenıch timeoutù/odpojení
+* opraven memory leak v titulcích nabídek
+* opraven memory leak ve frontì èekatelù na slot
+* opraveno skrolování pøi pøepínání oken hubù
+* pøidán dialog se smajlíkama (THX Rm.)
+* opraven vzácnı deadlock pøi nalezení fakera
+* pøidána podpora pro balíky emotikonù (ulote je do podsloky EmoPacks)
+* pøepsán kód pro seskupování downloadù v Pøenosech
+* pøidáno sdílení èásteènıch souborù (nápad z RevConnectu)
+* hodnì dalších vìcí, které nejsem schopen sepsat
+* opravena kritická chyba v knihovnì zlib
+
+
+	-- StrongDC++ 1.00 RC9 --
+
+*** VAROVÁNÍ ***
+Tato verze zmìní všechny Vaše konfiguraèní soubory a frontu, a je
+velmi pravdìpodobné, e se po aktualizaci nebudete moci vrátit ke
+starší verzi!!!
+Pøed aktualizací dostahujte své soubory, jestlie jejich názvy
+obsahují mezinárodní znaky - ty nemusí bıt správnì pøevedeny.
+*** VAROVÁNÍ ***
+
+* opraveno zobrazení progressbaru v uploadqueue
+* pøidána monost odstranit offline uivatele pøi vybìru více poloek
+* pøidán prùmìrnı share na uivatele (THX Corvik)
+* pøidán webserver (PhantomDC++, THX Chmelic za rozhraní)
+* opraven pád pøi spuštìní na starıch Windows (THX Prologic)
+* vrácena historie zpráv pøi kopnutí
+* opraven pád pøi znovuvloení zdroje
+* aktualizováno na PCRE 5.0
+* pøevedeno do UTF-8 kvùli správné lokalizaci
+* opraveno 100% vyuití CPU pøi stahování velkıch souborù
+* opraveny sloupce v Dokonèenıch uploadech
+* snad opraveno pøeteèení buferu
+* uloenı strom TTH je naèten ihned po spuštìní
+* poloky s 1 uivatelem jsou zobrazeny bez [+]
+* pøidána volba pro nastavení minimálního intervalu hledání
+* pøidáno nastavení barev v seznamu uivatelù (iDC++)
+* vylepšeny ladící pøíkazy (DCDM++)
+* opraven pád pøi zadání neplatného regulárního vırazu
+* volba pro rozbalení novıch vısledkù hledání (BCDC++ SVN)
+* pøidìlení slotu se ihned pøipojí (BCDC++ SVN)
+* neprovádí reconnect, pokud segment konèí na konci souboru (THX Liny)
+* aktualizováno na WTL 7.5.4291
+* snad opraven deadlock pøenosù
+* opraven pád pøi importování vzhledù
+* pøidána detekce rmDC++ 0.403B[7] a 0.403D[1] s emulací DC++
+* progressbary ve frontì zobrazují ovìøené bloky
+* pøidána volba pro vypnutí aktualizace fronty v reálném èase (ke sníení vyuití CPU)
+* pøidána volba pro vypnutí zobrazování chatu (zDC++)
+* opraveno obèasné zatuhnutí klienta pøi otevøení fronty
+* zmìnìn vzhled progressbarù
+* opraven problém pøi sdílení celé koøenové sloky
+* nástroj pro zjištìní TTH hashuje ve vlastním threadu (THX Prologic)
+* pøidána poloka pro otevøení stavu hashování do hlavního menu (fulDC)
+* opraveno staení souboru pokud ji existuje doèasnı soubor plné velikosti
+* aktualizováno na ZLIB 1.2.2
+* odstranìno odstraòování diakritiky
+* zmìna barev se projeví ihned (CZDC++)
+* pøidány vlajky státù (CZDC++)
+* aktivní/pasivní reim lze zvolit pro kadı oblíbenı hub
+* pøidána poloka Otevøít vlastní seznam souborù do hlavního menu (fulDC)
+* vylepšeno odpojování pomalıch stahování (sekundy!!!; pouze pøi segm. stahování; opraven "ádnı volnı blok")
+* opraveno pøesouvání podsloek ve frontì
+* pøidána podpora protokolu file:// do chatu
+* opraven "ádnı volnı blok", kdy se objevila chyba bìhem dekomprese
+* pøidána volba pro pøepnutí userlistu do horizontální polohy (DCDM++)
+* v pøenosech je zobrazen skuteènı uplynulı èas
+* pøidáno tlaèítko Pozastavit hledání (CZDC++)
+* pøidána volba pro nastavení maximálního poètu soubìnì stahovanıch souborù (vıchozí = 15)
+* opraven bug se ztrátou vısledkù hledání
+* je zobrazen èas do dalšího hledání
+* pøidána volba pro zapnutí/vypnutí antifragmentaèní metody
+* segmenty mají pevnou velikost a není tøeba rekonektnutí po staení bloku
+
+
+	-- StrongDC++ 1.00 RC8 --
+
+* away je ukládán pøi vypnutí
+* odpojování pomalıch stahování lze nyní zapnout/vypnout pro jednotlivé soubory
+* pøidáno chybìjící tlaèítko Staené informace o MP3 na lištu
+* pøidáno menu Kopírovat do menu záloky hubu
+* pøidáno nastavení pro pøepnutí do starého vzhledu sdílení
+* pøidáno potvrzení pøi mazaní souboru z Pøenosù
+* pøidáno procentuální vyjádøení kontroly TTH
+* pøidáno tlaèítko pro náhled zvuku v nastavení
+* pøidány 2 poloky do menu záloky seznamù souborù
+* pøidány bublinové zprávy pro nìkolik událostí
+* pøidány ikonky do fronty, které znaèí, zda je k dispozici strom TTH
+* vyhledávací špion nyní podporuje hledání podle TTH
+
+* nastavení je ukládáno do zvláštní sloky (iDC++) - pøesuòte své .xml soubory do sloky Settings
+* po skonèení hashování je aktualizován seznam souborù (CZDC++)
+* pøidán obrázek pozadí (DCDM++)
+* pøidán progressbar do fronty odesílání (iDC++)
+* pøidána monost vloit magnet link do fronty (CZDC++)
+* pøidáno jak dlouho èeká uivatel v upload queue a kdy byl poslední poadavek (CZDC++)
+* synchronizace s CVS DC++ 0.40325
+
+* aktualizováno na WTL 7.5.4196
+* filtr hledání se aktivuje a po stisku Enter
+* fronta hledání má prodlevu 30 sekund
+* kód Fronty odesílání pøesunut do hlavního threadu (x deadlock)
+* logy chatu/PM jsou øazeny do podsloek
+* optimalizováno seskupování poloek v Pøenosech
+* v menu "Stáhnout do" jsou nabízeny pouze soubory se stejnım TTH
+* vylepšeno nastavování barev
+
+* opraven filtr hledání pøi jiném seøazení sloupcù
+* opraven memory leak pøi detekci NetLimiteru
+* opraven memory leak pøi hashování staeného souboru (THX PPK)
+* opraven náhodnı pád pøi odstraòování TestSUR po odpojení
+* opraven pád pøi stahování informací o MP3
+* opraveno nastavení úrovnì komprese
+* opraveno nìkolik monıch deadlockù
+* opraveno pøekreslování seznamù ve Win2000
+* opraveno zobrazení ikon v userlistu pøi kontrole uivatele
+
+
+	-- StrongDC++ 1.00 RC7 --
+
+* kdy je k dispozici Tiger Tree, jsou pøi poškozeném souboru staeny pouze chybné bloky
+* na lištu pøidáno tlaèítko pro zapnutí/vypnutí zvukù
+* pøi hledání jsou poloky se stejnım TTH seskupovány pod jednu [+] poloku
+* pøidán filtr do hledání (podporuje regulérní pøíkazy)
+* pøidána kontrola uivatele, kterı se pøipojí na hub
+* pøidána poloka pro odstranìní offline uivatelù z fronty
+* pøidáno nìkolik novıch zvukovıch událostí
+* pøidáno nìkolik poloek do popupmenu pøi segmentovém stahování
+* pøidány ikonky online/offline/away do Oblíbenıch uivatelù
+
+* automatické hledání alternativ podle RevConnectu
+* fronta hledání proti searchspamu s prodlevou 15 sekund (RevConnect)
+* nìkolik novinek a zmìn z CZDC++
+* pøi hledání jsou zvıraznìny soubory, které jsou ji ve frontì (PhantomDC++)
+* pøidán pokus o znovupøipojení, kdy download dosáhne 0 B/s (DCDM++)
+* pøidána volba Hlásit hledání alternativ ve statusbaru (CZDC++)
+* pøidána volba pro naètení nìkolika posledních øádkù soukromé zprávy (CZDC++)
+* synchronizace s CVS DC++ 0.404
+* vylepšeno pøijímání pøíkazù od klientù (CZDC++)
+
+* automatické odstraòování pomalıch zdrojù lze vypnout
+* komprese je standardnì povolena a mìla by bıt funkèní i se segmentovım stahováním
+* NetLimiter je detekován pouze pokud se omezuje StrongDC++
+* odstranìna Flood cache pro progressbary
+* odstranìna volba pro neposílání tagu
+* pøedìlán userfilter + regulérní pøíkazy
+* spouštìcí logo není Vdy na vrchu
+* vylepšena aktualizace novıch verzí (oDC++)
+* vylepšeno odchytávání magnetù (BCDC++)
+* vylepšeno segmentové stahování, které zaruèí dobrou integritu souboru (THX Liny)
+* vylepšeny profily klientù (DCDM++)
+* zmìnìn styl nabídek na XP (zDC++)
+* zmìnìn vzhled dialogu O programu (oDC++)
+* zmìnìn vzhled dialogu pøi pádu programu
+
+* opraven bug v DC++ emulaci (THX PPK)
+* opraven bug v nastavení sdílení
+* opraven memory leak v SearchFrame
+* opraven problém se stejnımi pøezdívkami na Toomaxxu
+* opraven zvuk pøi zobrazení vlastního nicku
+* opravena nemonost stahovat od klientù zaloenıch na DC++ 0.402 CVS a vyšších
+* opraveno away pøi minimalizaci
+* opraveno importování tématu
+* opraveno naèítání RAW pøíkazù
+* opraveno nekoneèné pøipojování k uivateli, kterı je ve frontì vícekrát, pøi stahování na max segmentù
+* opraveno øazení uploadù
+
+
+	-- StrongDC++ 1.00 RC6 --
+
+* doplnìna chybìjící poloka Kopírovat TTH pøi hledání
+* jednoduchá detekce NetLimitera
+* nástroj pro zjištìní TTH zobrazí magnet-link
+* poloky segmentového stahování jsou seskupovány pod jednu [+] poloku (experimentální)
+* pøi hashování dokonèeného stahování je zobrazena zpráva na progressbaru
+* pøi minimalizaci je nastavena nízká priorita (pouze Win2000/XP)
+* pøi poškozeném souboru je staení opakováno za 10 sekund
+* pøi uloení fronty je vytvoøena záloha
+* pøidána volba pro hledání souborù pouze s TTH
+* pøidána volba pro zobrazování rychlosti v popisu
+* pøidáno nastavení progressbarù pro segmenty
+* v nástroji pro zjištìní TTH lze øetìzec zkopírovat do schránky
+* volba pro automatické ukládání fronty v urèitém èasovém intervalu
+
+* automatické nastavování priorit stahovanıch souborù (PhantomDC++)
+* automatické odstraòování diakritiky ze zpráv (CZDC++)
+* ladící pøíkazy (DCDM++)
+* nìkolik zmìn podle CZDC++ 0.401[D]
+* podpora magnet-linkù (CZDC++, RevConnect)
+* pøidán sloupec Nick do vyhledávacího špiona (BCDC++)
+* pøidána poloka Prohledat Bitzi do hledání (RevConnect)
+* pøidána volba pro nastavení max. poètu smajlíkù v jedné zprávì (CZDC++)
+* pøidány progressbary do fronty, na kterıch jsou vyznaèeny staené segmenty (CZDC++)
+* stromová struktura pro vıbìr adresáøù ke sdílení, neexistující sloky jsou automaticky odstranìny (PossumMod)
+* vylepšeno pøijímání pøíkazù od hubu (CZDC++)
+* záloky podle CZDC++
+* zdrojovı kód podle poslední CVS DC++ 0.402
+
+* aktualizováno na STLPort 4.6.2
+* aktualizováno na WTL 7.5
+* automaticky jsou kadıch 20 sekund odstraòovány pouze zdroje pomalejší ne 1kB/s
+* hashování má Idle prioritu
+* komprese povolena pouze s klienty >= 0.307
+* minimální velikost segmentu je nastavena automaticky podle velikosti souboru
+* profily klientù jsou nyní kompatibilní s DCDM++
+* v transferviewu jsou zdroje vyhledávány podle TTH
+* zmìna v segmentovém stahování
+
+* opraven pád pøi odpojování pomalıch stahování
+* opraven pád pøi pøijímání $MyInfo od RoboCopa
+* opraven pøíkaz /me v chatu
+* opraveno ukládání a naèítání barvy OPù
+* opraveno zatuhnutí na Tukanovi
+* opraveno zobrazení náhledu v nastavení
+* opraveno zobrazování nabídky v chatu pøi zavøeném userlistu
+* snad opraveno skrolování v chatu
+
+
+	-- StrongDC++ 1.00 RC5 --
+
+* funkce Roll-forward, která zajistí správné navázání segmentù (experimentální)
+* jednoduchı nástroj pro zjištìní hodnoty TTH u souborù
+* na lištu pøidáno tlaèítko pro zapnutí/vypnutí omezovaèe uploadu
+* nová tlaèítka pro export/import barevnıch schémat (naètení jiného vzhledu nelze vzít zpìt!!!)
+* nová zvuková událost, pokud se váš nick objeví v chatu
+* po staení soubor je vypoèten hash a je zkontrolováno, zda se soubor stáhnul dobøe
+* pøi hledání je zobrazen poèet nalezenıch souborù
+* pøidán barevnı styl pro zvırazòování nickù OPù
+* pøidána volba pro automatické nastavení IP adresy pøi kadém spuštìní
+* pøidáno okno Staené informace o MP3
+
+* automatické odpojení downloadù pomalejších ne 1.2kB/s (RevConnect)
+* filtr uivatelù (zDC++)
+* odstranìn zbıvající èas a rychlost u èekajících pøenosù (DC++ 0.402 CVS)
+* pøidán popis do Profilù klientù (DCDM++)
+* pøidáno TTHSearch do $Supports pøi komunikaci Hub<->Client (DC++ 0.402 CVS)
+* pøidáno více parametrù pro RAW pøíkazy (DCDM++)
+* vylepšena fronta èekatelù na slot (CZDC++)
+* zadokumentováno %[line:reason] (DC++ 0.402 CVS)
+* zmìna nastavení toolbaru se projeví ihned po uloení nastavení (CZDC++)
+* zvıšena rychlost hashování (experimentální, DC++ 0.402 CVS)
+
+* drobná zmìna v ikonkách uivatelù podle WinXP SP2
+* hashování je povinné
+* pøi hledání podle TTH je velikost nastavena na Normální (DC++ 0.402 CVS)
+* pøi zaplém omezovaèi uploadu je pøi zaplé DC++ emulaci zobrazena rychlost v popisu
+* zmìnìn vzhled záloek (oDC++)
+
+* moná opraven pád programu pøi poèítání celkové rychlosti segmentù (THX ProLogic)
+* opraven bug s dialogy Vyhledat sloku
+* opraven bug s oøezáváním smajlíkù
+* opraven drobnı bug v emulaci DC++
+* opraven pád pøi dvoukliku do Pøenosù
+* opraven problém s ComboBoxEx na systémech jinıch ne WinXP
+* opraven problém s neomezenım rùstem exceptioninfo (DC++ 0.402 CVS)
+* opraveno kousnutí aplikace ve frontì èekatelù na slot
+* opraveno kousnutí pøi zobrazení fronty (DC++ 0.402 CVS)
+* opraveno obarvování seznamu pro vıbìr typu souboru pøi hledání
+* provizornì opraveno opaèné zobrazení pomìru komprimovanıch stahování
+
+
+	-- StrongDC++ 1.00 RC4 --
+
+* do userlistu pøidány sloupeèky Pk, Lock a Supports
+* monost nastavit si vlastní ikonky uivatelù
+* pøidána funkce Odstranit uivatele z fronty, pokud je rychlost pod urèitou hranicí (THX Corvik)
+* pøidána volba pro hledání souborù pøesné velikosti
+* pøidány ikonky do seznamu pro nastavení pøipojení
+* regulární vırazy pro nastavení pøípon pro segmentované stahování
+
+* do user-nabídky pøidány poloky "Check File List", "Get user response" a "Report user" (DCDM++)
+* nastavení vıchozích adresáøù pro stahování pro rùzné typy souborù (PhantomDC++)
+* profily klientù (DCDM++)
+* pøidáni smajlíci (CZDC++)
+* pøidáno vlastní nastavení toolbaru (PhantomDC++)
+* zdrojovı kód zaloen na DC++ 0.401
+
+* aktualizován STLPort na verzi 4.6.1
+* AVIPreview nastaven jako vıchozí prohlíeè filmù (pouze pøi èisté instalaci)
+* hashování souborù je standardnì zapnuto
+* komprese je standardnì vypnuta
+* odstranìno Mapování souboru v pamìti
+* pøedìlán Fake detector
+* pøedìlány ikonky v hlavní nabídce na 32bitové
+* sníen interval pro vyprazdòování sady na 5 sekund (sniuje vyuití pamìti)
+* zmìnìna ikona v lištì pøi pøíchodu soukromé zprávy
+
+* opraven memory leak pøi zavírání Navštívenıch hubù (THX PPK)
+* opraveno nìkolik dalších memory leakù
+* opraveno otevírání odkazù v novém oknì
+* opraveno posílání poètu slotù v searchu
+* opraveno posílání hashù v searchu
+* opraveno pøejmenování/pøesunutí souboru ve frontì (experimentální)
+* opraveno øazení èíselnıch údajù v HubListu (THX PPK)
+* opraveno ukládání sloupcù v Navštívenıch hubech
+* opraveno zamaèkávání tlaèítek na toolbaru
+
+
+	-- StrongDC++ 1.00 RC3 --
+
+* opraven pád pøi otevírání nabídky u souboru bez pøípony
+* opraven rozsah vnitøních IP adres (THX PPK)
+* opraveno pøijímání $MyInfa (THX PPK)
+* opraveno vícenásobné zobrazování jména v nabídce soukromé zprávy
+* opraveno zamrzání aplikace
+* opraveno zjišování novìjší verze programu
+
+* do UserListu pøidán sloupeèek ISP (ISP a IP se zobrazuje pouze OPùm)
+* pøidán pøíkaz /w pro winamp a F5 pro obnovení filelistu, odstranìn pøíkaz /back (THX Corvik)
+* pøidána nápovìda na pøíkazu /help v chatu (THX Corvik)
+* pøidáno Kopírovat ISP, Nick+IP a Vše do UserListu (THX Corvik)
+* ve frontì se pøi stahování zobrazuje poèet online uivatelù (THX Corvik)
+
+* pøidán seznam nedávno otevøenıch hubù (iDC++)
+* pøidáno automatické vypnutí PC, pokud neprobíhají ádná stahování (oDC++)
+* pøidány ikonky do seznamu Typ souboru, nepodporuje barvy :-( (BCDC++ CVS, THX Corvik)
+* tlaèítka na lištì jsou zamaèkávací (iDC++)
+
+* odstranìna uivatelská nabídka v PM (opravuje pád aplikace)
+* odstranìno vytváøení XMLFileListu, mìlo by to urychlit spouštìní programu
+
+
+	-- StrongDC++ 1.00 RC2 --
+
+* do nastavení pøidáno tlaèítko pro zjištìní IP adresy a automatické nastavení active/passive (experimentální)
+* monost Nepouívat segmentované stahování pro urèité typy souborù
+* monost zastavit vyhledávání
+* poèet segmentù lze nastavit ruènì nebo podle typu pøipojení
+* pokud velikost sdílení obsahuje víc ne 5 nul, je uivatel povaován za fakera
+* pøidána emulace klientù CZDC++ a DC++
+* pøidána poloka Hledat jiné zdroje do menu v pøenosech
+* pøidána poloka Zavøít do popup-nabídky na záloce hubu
+* pøidána volba pro nastavení minimální velikosti segmentu (vıchozí hodnota je 64kB)
+* pøidána volba pro nastavení maximálního poètu alternativních zdrojù
+
+* odstranìna monost Automaticky provádìt segmentované stahování
+* volba Automaticky hledat alternativy pøesunuta do sekce Segmentované stahování
+* vylepšeno pøidávání alternativních zdrojù do fronty
+* zmìnìno nastavení zvukù
+
+* opraven pád aplikace v popup-nabídce ve frontì (oDC++)
+* opraven Stealth mod (THX Corvik)
+* opraveno spouštìní internetovıch odkazù
+
+* bloom filtry dramaticky zvyšují vıkonnost CPU, pokud máte velkı share (experimentální, DC++ 0.307 CVS)
+* náhled souboru pøi stahování (PhantomDC++)
+* pøi hledání jsou zjišovány IP adresy uivatelù (BCDC++)
+* pøidána monost, e názvy souborù musí bıt úplnì stejné, aby se pøedešlo staení špatného souboru (experimentální, DC++ 0.307 CVS)
+* pøidána volba Flood cache pro sníení vyuití CPU s novıma progressbarama (oDC++)
+* pøidáno nastavení detekce fakerù (DC++k CDM)
+* pøidáno TTH hashování souborù (experimentální, DC++ 0.307 CVS, BCDC++)
+* seznamy souborù v XML, které obsahují hashe a podporují úplné názvy utf-8, špatné zobrazení èeskıch znakù (experimentální, DC++ 0.307 CVS)
+* zvıšena rychlost naèítání share se spoustou souborù o stejné velikosti (experimentální, DC++ 0.307 CVS)
