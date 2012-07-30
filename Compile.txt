@@ -1,0 +1,61 @@
+The most important thing about compiling: If it didn't work, *you* screwed up.
+
+How to compile in 3 easy steps:
+
+1) Download the source and STLPort from the DC++ download site. Unpack the DC++ source. Unpack the STLport source into the stlport directory.
+   Download WTL from http://sf.net/projects/wtl. Unpack it to the wtl folder.
+   
+2) You most probably have to update your Platform SDK, http://msdn.microsoft.com will tell you how.
+   You have to do this if you get an error that "natupnp.h" is missing. Since all you need is this
+   one file, you can ask someone at the dev hub to supply it for you (or look for it in the DC++
+   bugzilla, it's attached to one of the bugs).
+
+3) Open the solution and press your build button. If you find your executable unreasonably large, you
+   probably compiled in debug mode - switch to release once you're done testing the code.
+
+Note 1;	I now use vc7.1 (2003). I don't care particularly if you use an older MS compiler (6.0, 7.0),
+	because these don't even come close to supporting the c++ standard. If you want to try anyway,
+	you're on your own.  You will need a new Platform SDK if you're using VS 6.0.
+	The client part usually compiles fine with g++ 3.4+, There's a bug in 3.3
+	(and probably older versions) that prevents a few files from being compiled.
+
+Note 2;	You'll need DBGHELP.dll from the binary distribution unless you're using WinXP, otherwise 
+        you'll get errors saying symbols are missing when running your compiled executable. My copy 
+        says version 5.1.2600.1106 right now.
+
+Note 3;	If you have problems, read the forum posts before posting. Somebody else has probably made your 
+	mistake already. The word to note in the last sentence is 'your', so let me articulate a bit more,
+	it works on my computer, so it's yours that is not correctly set up.
+
+Note 4;	To build the HTML Help file, you will need to download and install the HTML Help Workshop 
+	application.  The custom build setup relies on it being installed to the default path, which 
+	is: "C:\Program Files\HTML Help Workshop\"
+	http://msdn.microsoft.com/library/default.asp?url=/library/en-us/htmlhelp/html/hwMicrosoftHTMLHelpDownloads.asp
+
+By the way, with doxygen, graphviz and some luck you can use the supplied doxygen configuration file
+to generate some nice docs...just check that the paths in doxyfile are correct (graphviz)...
+
+Linux / Unix:
+I've made some rudimentary autoconf/automake scripts now, so you can compile the client part into a library
+without too much hassle (I don't check if it compiles very often though...). You'll need the latest versions
+of automake and autoconf, and after getting the source (from CVS is easiest), do 
+"aclocal && automake && autoconf && configure && make" and you'll have the client part nicely compiled.
+When / if I test it I do it on a Gentoo AMD64 box with the latest gcc in 64-bit mode, so I don't have a clue
+if the 32-bit compile works...
+
+Submitting patches
+
+If you think you've done something that more people could use, you can always submit a patch for inclusion in the
+original distribution. I will then consider whether I like the patch or not based on things that might seem to be 
+completely random, which just might be the case. Popular reasons for rejecting a patch include, but are not limited to,
+ugly code, abusable features, feature that I don't like that bloat the application and incompatibility with other 
+modifications I've already done. 
+To increase the chances of your patch being accepted, post them in the DC++ bugzilla as diffs against the latest 
+code you can find (in the cvs repository on sourceforge most probably). You can find a lot of 
+information about diff and patch by googling for it. I like unified format (diff -u). When diffing, apply diff to
+the folders of the two versions, so that the paths will be included in the diff.
+By submitting a patch, you agree to that I get copyright of it. This to avoid stupid situations later on where
+the copyright is split out over a million people, each of which could stop further distribution of DC++, and also
+to make it easier for us to defend the gpl against violators. If you don't like this policy, start your own 
+distribution, if you're lucky it might become more popular than the original =). Please
+state explicitly in the email that you give me copyright over the code if the submission is larger than trivial.
