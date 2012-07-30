@@ -1,0 +1,1 @@
+StrongDC is a software for p2p server.
